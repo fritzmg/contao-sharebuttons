@@ -1,0 +1,30 @@
+/* from http://simplesharingbuttons.com/ */
+
+ul.sharebuttons > li > a {
+	width:32px;
+	height:32px;
+}
+
+ul.sharebuttons > li > a.facebook {
+	background-image:url('simpleflat/facebook.png');
+}
+
+ul.sharebuttons > li > a.twitter {
+	background-image:url('simpleflat/twitter.png');
+}
+
+ul.sharebuttons > li > a.gplus {
+	background-image:url('simpleflat/gplus.png');
+}
+
+ul.sharebuttons > li > a.linkedin {
+	background-image:url('simpleflat/linkedin.png');
+}
+
+ul.sharebuttons > li > a.xing {
+	display:none;
+}
+
+ul.sharebuttons > li > a.mail {
+	background-image:url('simpleflat/email.png');
+}

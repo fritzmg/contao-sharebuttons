@@ -17,7 +17,9 @@
 /**
  * Add palettes to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['sharebuttons'] = '{title_legend},name,headline,type;{sharebuttons_legend},sharebuttons_facebook,sharebuttons_twitter,sharebuttons_gplus,sharebuttons_linkedin,sharebuttons_xing,sharebuttons_mail,sharebuttons_template;{expert_legend},cssID,align,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['__selector__'][] = 'sharebuttons_usetheme';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['sharebuttons'] = '{title_legend},name,headline,type;{sharebuttons_legend},sharebuttons_facebook,sharebuttons_twitter,sharebuttons_gplus,sharebuttons_linkedin,sharebuttons_xing,sharebuttons_mail,sharebuttons_template;{sharebuttons_theme_legend},sharebuttons_usetheme;{expert_legend},cssID,align,space';
+$GLOBALS['TL_DCA']['tl_module']['subpalettes']['sharebuttons_usetheme'] = 'sharebuttons_theme';
 
 /**
  * Add fields to tl_module
@@ -91,6 +93,26 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['sharebuttons_template'] = array
 	'options_callback'		  => array('tl_sharebuttons_module', 'getSharebuttonsTemplates'),
 	'eval'                    => array('mandatory'=>true,'tl_class'=>'w50'),
 	'sql'                     => "varchar(32) NOT NULL default 'sharebuttons_default'"
+);
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['sharebuttons_usetheme'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['sharebuttons_usetheme'],
+	'exclude'                 => true,
+	'inputType'               => 'checkbox',
+	'eval'                    => array('submitOnChange'=>true),
+	'sql'                     => "char(1) NOT NULL default ''"
+);
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['sharebuttons_theme'] = array
+(
+	'label'					=> &$GLOBALS['TL_LANG']['tl_module']['sharebuttons_theme'],
+	'exclude'				=> true,
+	'inputType'				=> 'select',
+	'options'				=> array('sharebuttons_shadow','sharebuttons_simpleflat','sharebuttons_simpleicons_white','sharebuttons_simpleicons_black'),
+	'reference'				=> &$GLOBALS['TL_LANG']['tl_module'],
+	'default'				=> 'sharebuttons_shadow',
+	'sql'                   => "varchar(32) NOT NULL default ''"
 );
 
 class tl_sharebuttons_module extends Backend

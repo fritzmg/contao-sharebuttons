@@ -1,0 +1,61 @@
+/* from http://simpleicons.org/ */
+
+ul.sharebuttons > li > a {
+	width:32px;
+	height:32px;
+}
+
+ul.sharebuttons > li > a.facebook {
+	background-image:url('simpleicons/facebook-32-black.png');
+}
+
+ul.sharebuttons > li > a.twitter {
+	background-image:url('simpleicons/twitter-32-black.png');
+}
+
+ul.sharebuttons > li > a.gplus {
+	background-image:url('simpleicons/googleplus-32-black.png');
+}
+
+ul.sharebuttons > li > a.linkedin {
+	background-image:url('simpleicons/linkedin-32-black.png');
+}
+
+ul.sharebuttons > li > a.xing {
+	background-image:url('simpleicons/xing-32-black.png');
+}
+
+ul.sharebuttons > li > a.mail {
+	background-image:url('simpleicons/email-32-black.png');
+}
+
+@media only screen and (max-width:768px) {
+
+	ul.sharebuttons > li > a {
+		background-size:100% auto;
+	}
+
+	ul.sharebuttons > li > a.facebook {
+		background-image:url('simpleicons/facebook-64-black.png');
+	}
+
+	ul.sharebuttons > li > a.twitter {
+		background-image:url('simpleicons/twitter-64-black.png');
+	}
+
+	ul.sharebuttons > li > a.gplus {
+		background-image:url('simpleicons/googleplus-64-black.png');
+	}
+
+	ul.sharebuttons > li > a.linkedin {
+		background-image:url('simpleicons/linkedin-64-black.png');
+	}
+
+	ul.sharebuttons > li > a.xing {
+		background-image:url('simpleicons/xing-64-black.png');
+	}
+
+	ul.sharebuttons > li > a.mail {
+		background-image:url('simpleicons/email-64-black.png');
+	}
+}

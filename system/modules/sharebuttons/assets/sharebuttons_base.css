@@ -1,0 +1,25 @@
+ul.sharebuttons {
+	list-style-type:none;
+	margin:0 -4px;
+	padding:0;
+}
+
+ul.sharebuttons:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+
+ul.sharebuttons > li {
+	float:left;
+	margin:0 4px;
+}
+
+ul.sharebuttons > li > a {
+	display:block;
+	white-space:nowrap;
+	overflow:hidden;
+	text-indent:100%;
+	background-repeat:no-repeat;
+	background-position:center;
+}

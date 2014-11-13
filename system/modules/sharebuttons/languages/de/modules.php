@@ -26,4 +26,13 @@ $GLOBALS['TL_LANG']['tl_module']['sharebuttons_xing'] = array('Zeige Xing','Zeig
 $GLOBALS['TL_LANG']['tl_module']['sharebuttons_mail'] = array('Zeige E-Mail','Zeige e-mail teilen button');
 $GLOBALS['TL_LANG']['tl_module']['sharebuttons_template'] = array('Template','Verwendetes Frontend Template. Beginnt mit sharebuttons_');
 
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_theme_legend'] = "Theme";
+
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_usetheme'] = array('Theme benutzen','Integriert CSS files für das styling der buttons');
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_theme'] = array('Theme','Wähle ein Theme aus, das für die buttons verwendet wird');
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_shadow'] = 'Shadow';
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_simpleflat'] = 'Simple Flat';
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_simpleicons_white'] = 'Simple Icons White';
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_simpleicons_black'] = 'Simple Icons Black';
+
 ?>

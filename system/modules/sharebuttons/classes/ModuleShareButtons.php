@@ -39,6 +39,15 @@ class ModuleShareButtons extends Module
         $this->Template->linkedin = $this->sharebuttons_linkedin;
         $this->Template->xing = $this->sharebuttons_xing;
         $this->Template->mail = $this->sharebuttons_mail;
+        $this->Template->usetheme = $this->sharebuttons_usetheme;
+        $this->Template->theme = $this->sharebuttons_theme;
+
+        if( $this->sharebuttons_usetheme && TL_MODE == 'FE' )
+        {
+            if( !is_array( $GLOBALS['TL_CSS'] ) ) $GLOBALS['TL_CSS'] = array();
+            $GLOBALS['TL_CSS'][] = 'system/modules/sharebuttons/assets/sharebuttons_base.css';
+            $GLOBALS['TL_CSS'][] = 'system/modules/sharebuttons/assets/'.$this->sharebuttons_theme.'.css';
+        }
     }
 }
 ?>
