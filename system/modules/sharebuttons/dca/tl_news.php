@@ -1,6 +1,6 @@
 <?php
 
-$GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace('{publish_legend}','{share_legend},sharebuttons_networks,sharebuttons_theme,sharebuttons_template;{publish_legend}',$GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace('{publish_legend}','{sharebuttons_legend},sharebuttons_networks,sharebuttons_theme,sharebuttons_template;{publish_legend}',$GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
 
 $GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_networks'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_news']['sharebuttons_networks'],

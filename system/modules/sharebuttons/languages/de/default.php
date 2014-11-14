@@ -13,6 +13,7 @@
  * @license GPL-2.0
  */
 
+
 $GLOBALS['TL_LANG']['sharebuttons']['share_title'] = "Teilen:";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_facebook'] = "auf Facebook teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_twitter'] = "auf Twitter teilen";
