@@ -18,7 +18,6 @@ class ShareButtons extends \Frontend
 {
     public function parseArticles(&$objTemplate, $objArticle, $news)
     {
-        var_dump($news);
         if( $objArticle['sharebuttons_networks'] )
         {
             $sharebuttons_networks = deserialize( $objArticle['sharebuttons_networks'] );

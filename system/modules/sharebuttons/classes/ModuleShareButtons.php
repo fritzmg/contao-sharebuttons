@@ -31,7 +31,6 @@ class ModuleShareButtons extends Module
 
         $sharebuttons_networks = deserialize( $this->sharebuttons_networks );
         $sharebuttons_theme = $this->sharebuttons_theme;
-
         $objButtonsTemplate = new FrontendTemplate( $this->sharebuttons_template );
         foreach( $sharebuttons_networks as $v )
             $objButtonsTemplate->$v = true;
