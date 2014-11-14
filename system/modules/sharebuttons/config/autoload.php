@@ -19,7 +19,8 @@
  */
 ClassLoader::addClasses(array
 (
-	'ModuleShareButtons' => 'system/modules/sharebuttons/classes/ModuleShareButtons.php'
+	'ModuleShareButtons' => 'system/modules/sharebuttons/classes/ModuleShareButtons.php',
+	'ShareButtons'       => 'system/modules/sharebuttons/classes/ShareButtons.php'
 ));
 
 
@@ -28,5 +29,6 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
+	'mod_sharebuttons' => 'system/modules/sharebuttons/templates',
 	'sharebuttons_default' => 'system/modules/sharebuttons/templates'
 ));

@@ -1,24 +1,24 @@
-.mod_sharebuttons {
+.sharebuttons {
 	overflow:hidden;
 }
 
-.mod_sharebuttons > ul {
+.sharebuttons > ul {
 	list-style-type:none;
 	margin:-4px;
 	padding:0;
 }
 
-.mod_sharebuttons > ul:after {
+.sharebuttons > ul:after {
 	content:"";
 	display:block;
 	clear:both;
 }
 
-.mod_sharebuttons > ul > li {
+.sharebuttons > ul > li {
 	float:left;
 }
 
-.mod_sharebuttons > ul > li > a {
+.sharebuttons > ul > li > a {
 	margin:4px;
 	display:block;
 	white-space:nowrap;
@@ -28,6 +28,6 @@
 	background-position:center;
 }
 
-.sharebuttons_none > ul > li > a {
+ul.sharebuttons_text > li > a {
 	text-indent:0;
 }

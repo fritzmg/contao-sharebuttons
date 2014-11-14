@@ -1,31 +1,31 @@
 /* from http://simpleicons.org/ */
 
-.sharebuttons_simpleicons_white > ul > li > a {
+ul.sharebuttons_simpleicons_white > li > a {
 	width:32px;
 	height:32px;
 }
 
-.sharebuttons_simpleicons_white > ul > li > a.facebook {
+ul.sharebuttons_simpleicons_white > li > a.facebook {
 	background-image:url('simpleicons/facebook-32.png');
 }
 
-.sharebuttons_simpleicons_white > ul > li > a.twitter {
+ul.sharebuttons_simpleicons_white > li > a.twitter {
 	background-image:url('simpleicons/twitter-32.png');
 }
 
-.sharebuttons_simpleicons_white > ul > li > a.gplus {
+ul.sharebuttons_simpleicons_white > li > a.gplus {
 	background-image:url('simpleicons/googleplus-32.png');
 }
 
-.sharebuttons_simpleicons_white > ul > li > a.linkedin {
+ul.sharebuttons_simpleicons_white > li > a.linkedin {
 	background-image:url('simpleicons/linkedin-32.png');
 }
 
-.sharebuttons_simpleicons_white > ul > li > a.xing {
+ul.sharebuttons_simpleicons_white > li > a.xing {
 	background-image:url('simpleicons/xing-32.png');
 }
 
-.sharebuttons_simpleicons_white > ul > li > a.mail {
+ul.sharebuttons_simpleicons_white > li > a.mail {
 	background-image:url('simpleicons/email-32.png');
 }
 
@@ -33,31 +33,31 @@
        only screen and (-o-min-device-pixel-ratio: 13/10),
        only screen and (min-resolution: 120dpi) 
 {
-	.sharebuttons_simpleicons_white > ul > li > a {
+	ul.sharebuttons_simpleicons_white > li > a {
 		background-size:100% auto;
 	}
 
-	.sharebuttons_simpleicons_white > ul > li > a.facebook {
+	ul.sharebuttons_simpleicons_white > li > a.facebook {
 		background-image:url('simpleicons/facebook-64.png');
 	}
 
-	.sharebuttons_simpleicons_white > ul > li > a.twitter {
+	ul.sharebuttons_simpleicons_white > li > a.twitter {
 		background-image:url('simpleicons/twitter-64.png');
 	}
 
-	.sharebuttons_simpleicons_white > ul > li > a.gplus {
+	ul.sharebuttons_simpleicons_white > li > a.gplus {
 		background-image:url('simpleicons/googleplus-64.png');
 	}
 
-	.sharebuttons_simpleicons_white > ul > li > a.linkedin {
+	ul.sharebuttons_simpleicons_white > li > a.linkedin {
 		background-image:url('simpleicons/linkedin-64.png');
 	}
 
-	.sharebuttons_simpleicons_white > ul > li > a.xing {
+	ul.sharebuttons_simpleicons_white > li > a.xing {
 		background-image:url('simpleicons/xing-64.png');
 	}
 
-	.sharebuttons_simpleicons_white > ul > li > a.mail {
+	ul.sharebuttons_simpleicons_white > li > a.mail {
 		background-image:url('simpleicons/email-64.png');
 	}
 }

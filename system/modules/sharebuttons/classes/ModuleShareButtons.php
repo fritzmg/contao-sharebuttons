@@ -20,41 +20,39 @@ class ModuleShareButtons extends Module
      * Template
      * @var string
      */
-    protected $strTemplate = 'sharebuttons_default';
+    protected $strTemplate = 'mod_sharebuttons';
 
     /**
      * Generate module
      */
     protected function compile()
     {
-        if( $this->sharebuttons_template )
-        {
-            $this->Template = new FrontendTemplate( $this->sharebuttons_template );
-        }
+        global $objPage;
 
-        // add settings to template
-        $this->Template->facebook = $this->sharebuttons_facebook;
-        $this->Template->twitter = $this->sharebuttons_twitter;
-        $this->Template->gplus = $this->sharebuttons_gplus;
-        $this->Template->linkedin = $this->sharebuttons_linkedin;
-        $this->Template->xing = $this->sharebuttons_xing;
-        $this->Template->mail = $this->sharebuttons_mail;
-        $this->Template->usecss = $this->sharebuttons_usecss;
-        $this->Template->theme = $this->sharebuttons_theme;
+        $sharebuttons_networks = deserialize( $this->sharebuttons_networks );
+        $sharebuttons_theme = $this->sharebuttons_theme;
 
-        if( $this->sharebuttons_usecss && TL_MODE == 'FE' )
+        $objButtonsTemplate = new FrontendTemplate( $this->sharebuttons_template );
+        foreach( $sharebuttons_networks as $v )
+            $objButtonsTemplate->$v = true;
+        $objButtonsTemplate->url = rawurlencode( \Environment::get('base') . \Environment::get('request') );
+        $objButtonsTemplate->title = rawurlencode( $objPage->pageTitle );
+        $objButtonsTemplate->theme = $sharebuttons_theme;
+        $this->Template->sharebuttons = $objButtonsTemplate->parse();
+
+        if( $sharebuttons_theme && TL_MODE == 'FE' )
         {
-            $base = 'system/modules/sharebuttons/assets/sharebuttons_base.css';
-            $theme = 'system/modules/sharebuttons/assets/'.$this->sharebuttons_theme.'.css';
+            $css_base  = 'system/modules/sharebuttons/assets/sharebuttons_base.css';
+            $css_theme = 'system/modules/sharebuttons/assets/'.$sharebuttons_theme.'.css';
 
             if( !is_array( $GLOBALS['TL_CSS'] ) )
                 $GLOBALS['TL_CSS'] = array();
 
-            if( !in_array( $base, $GLOBALS['TL_CSS'] ) )
-                $GLOBALS['TL_CSS'][] = $base;
+            if( !in_array( $css_base, $GLOBALS['TL_CSS'] ) )
+                $GLOBALS['TL_CSS'][] = $css_base;
 
-            if( !in_array( $theme, $GLOBALS['TL_CSS'] ) && $this->sharebuttons_theme != 'sharebuttons_none' )
-                $GLOBALS['TL_CSS'][] = $theme;
+            if( !in_array( $css_theme, $GLOBALS['TL_CSS'] ) && $sharebuttons_theme != 'sharebuttons_text' )
+                $GLOBALS['TL_CSS'][] = $css_theme;
         }
     }
 }

@@ -18,19 +18,19 @@ $GLOBALS['TL_LANG']['FMD']['sharebuttons'] = array('Share buttons', '');
 
 $GLOBALS['TL_LANG']['tl_module']['sharebuttons_legend'] = "Einstellungen";
 
-$GLOBALS['TL_LANG']['tl_module']['sharebuttons_facebook'] = array('Zeige Facebook','Zeige Facebook teilen button');
-$GLOBALS['TL_LANG']['tl_module']['sharebuttons_twitter'] = array('Zeige Twitter','Zeige Twitter teilen button');
-$GLOBALS['TL_LANG']['tl_module']['sharebuttons_gplus'] = array('Zeige Google+','Zeige Google+ teilen button');
-$GLOBALS['TL_LANG']['tl_module']['sharebuttons_linkedin'] = array('Zeige LinkedIn','Zeige LinkedIn teilen button');
-$GLOBALS['TL_LANG']['tl_module']['sharebuttons_xing'] = array('Zeige Xing','Zeige Xing teilen button');
-$GLOBALS['TL_LANG']['tl_module']['sharebuttons_mail'] = array('Zeige E-Mail','Zeige e-mail teilen button');
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_facebook'] = array('Facebook','Zeige Facebook teilen button');
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_twitter'] = array('Twitter','Zeige Twitter teilen button');
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_gplus'] = array('Google+','Zeige Google+ teilen button');
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_linkedin'] = array('LinkedIn','Zeige LinkedIn teilen button');
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_xing'] = array('Xing','Zeige Xing teilen button');
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_mail'] = array('E-Mail','Zeige E-Mail teilen button');
 $GLOBALS['TL_LANG']['tl_module']['sharebuttons_template'] = array('Template','Verwendetes Frontend Template. Beginnt mit sharebuttons_');
 
 $GLOBALS['TL_LANG']['tl_module']['sharebuttons_css_legend'] = "Styling";
 
 $GLOBALS['TL_LANG']['tl_module']['sharebuttons_usecss'] = array('CSS benutzen','Integriert ein Basis Stylesheet');
 $GLOBALS['TL_LANG']['tl_module']['sharebuttons_theme'] = array('Theme','Wähle ein Theme aus, das für die buttons verwendet wird');
-$GLOBALS['TL_LANG']['tl_module']['sharebuttons_none'] = 'Keine Theme';
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_none'] = 'Kein Theme';
 $GLOBALS['TL_LANG']['tl_module']['sharebuttons_shadow'] = 'Shadow';
 $GLOBALS['TL_LANG']['tl_module']['sharebuttons_simpleflat'] = 'Simple Flat';
 $GLOBALS['TL_LANG']['tl_module']['sharebuttons_simpleicons_white'] = 'Simple Icons White';

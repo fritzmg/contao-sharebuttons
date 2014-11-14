@@ -1,30 +1,30 @@
 /* from http://wegraphics.net/downloads/free-long-shadow-social-media-icons/ */
 
-.sharebuttons_shadow > ul > li > a {
+ul.sharebuttons_shadow > li > a {
 	width:32px;
 	height:32px;
 }
 
-.sharebuttons_shadow > ul > li > a.facebook {
+ul.sharebuttons_shadow > li > a.facebook {
 	background-image:url('shadow/facebook.png');
 }
 
-.sharebuttons_shadow > ul > li > a.twitter {
+ul.sharebuttons_shadow > li > a.twitter {
 	background-image:url('shadow/twitter.png');
 }
 
-.sharebuttons_shadow > ul > li > a.gplus {
+ul.sharebuttons_shadow > li > a.gplus {
 	background-image:url('shadow/gplus.png');
 }
 
-.sharebuttons_shadow > ul > li > a.linkedin {
+ul.sharebuttons_shadow > li > a.linkedin {
 	background-image:url('shadow/linkedin.png');
 }
 
-.sharebuttons_shadow > ul > li > a.xing {
-	display:none;
+ul.sharebuttons_shadow > li > a.xing {
+	text-indent:0;
 }
 
-.sharebuttons_shadow > ul > li > a.mail {
-	display:none;
+ul.sharebuttons_shadow > li > a.mail {
+	text-indent:0;
 }
