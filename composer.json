@@ -25,7 +25,7 @@
 		"contao-community-alliance/composer-installer":"*"
 	},
     "replace": {
-        "contao-legacy/sharebuttons": "*"
+        "contao-legacy/sharebuttons": "self.version"
     },
 	"extra":{
 		"contao":{

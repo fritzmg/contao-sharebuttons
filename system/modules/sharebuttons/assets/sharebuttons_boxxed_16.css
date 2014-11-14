@@ -1,0 +1,55 @@
+/* from http://www.twelveskip.com/resources/icons/1091/boxxed-flat-social-media-icons */
+
+.sharebuttons_boxxed_16 > ul > li > a {
+	width:16px;
+	height:16px;
+}
+
+.sharebuttons_boxxed_16 > ul > li > a.facebook {
+	background-image:url('boxxed/16/16-facebook.png');
+}
+
+.sharebuttons_boxxed_16 > ul > li > a.twitter {
+	background-image:url('boxxed/16/16-twitter.png');
+}
+
+.sharebuttons_boxxed_16 > ul > li > a.gplus {
+	background-image:url('boxxed/16/16-googleplus.png');
+}
+
+.sharebuttons_boxxed_16 > ul > li > a.linkedin {
+	background-image:url('boxxed/16/16-linkedin.png');
+}
+
+.sharebuttons_boxxed_16 > ul > li > a.xing {
+	display:none;
+}
+
+.sharebuttons_boxxed_16 > ul > li > a.mail {
+	display:none;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+       only screen and (-o-min-device-pixel-ratio: 13/10),
+       only screen and (min-resolution: 120dpi) 
+{
+	.sharebuttons_boxxed_16 > ul > li > a {
+		background-size:100% auto;
+	}
+
+	.sharebuttons_boxxed_16 > ul > li > a.facebook {
+		background-image:url('boxxed/32/32-facebook.png');
+	}
+
+	.sharebuttons_boxxed_16 > ul > li > a.twitter {
+		background-image:url('boxxed/32/32-twitter.png');
+	}
+
+	.sharebuttons_boxxed_16 > ul > li > a.gplus {
+		background-image:url('boxxed/32/32-googleplus.png');
+	}
+
+	.sharebuttons_boxxed_16 > ul > li > a.linkedin {
+		background-image:url('boxxed/32/32-linkedin.png');
+	}
+}

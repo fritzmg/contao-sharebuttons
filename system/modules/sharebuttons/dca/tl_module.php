@@ -17,9 +17,9 @@
 /**
  * Add palettes to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['__selector__'][] = 'sharebuttons_usetheme';
-$GLOBALS['TL_DCA']['tl_module']['palettes']['sharebuttons'] = '{title_legend},name,headline,type;{sharebuttons_legend},sharebuttons_facebook,sharebuttons_twitter,sharebuttons_gplus,sharebuttons_linkedin,sharebuttons_xing,sharebuttons_mail,sharebuttons_template;{sharebuttons_theme_legend},sharebuttons_usetheme;{expert_legend},cssID,align,space';
-$GLOBALS['TL_DCA']['tl_module']['subpalettes']['sharebuttons_usetheme'] = 'sharebuttons_theme';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['__selector__'][] = 'sharebuttons_usecss';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['sharebuttons'] = '{title_legend},name,headline,type;{sharebuttons_legend},sharebuttons_facebook,sharebuttons_twitter,sharebuttons_gplus,sharebuttons_linkedin,sharebuttons_xing,sharebuttons_mail,sharebuttons_template;{sharebuttons_css_legend},sharebuttons_usecss;{expert_legend},cssID,align,space';
+$GLOBALS['TL_DCA']['tl_module']['subpalettes']['sharebuttons_usecss'] = 'sharebuttons_theme';
 
 /**
  * Add fields to tl_module
@@ -95,9 +95,9 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['sharebuttons_template'] = array
 	'sql'                     => "varchar(32) NOT NULL default 'sharebuttons_default'"
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['sharebuttons_usetheme'] = array
+$GLOBALS['TL_DCA']['tl_module']['fields']['sharebuttons_usecss'] = array
 (
-	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['sharebuttons_usetheme'],
+	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['sharebuttons_usecss'],
 	'exclude'                 => true,
 	'inputType'               => 'checkbox',
 	'eval'                    => array('submitOnChange'=>true),
@@ -109,9 +109,18 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['sharebuttons_theme'] = array
 	'label'					=> &$GLOBALS['TL_LANG']['tl_module']['sharebuttons_theme'],
 	'exclude'				=> true,
 	'inputType'				=> 'select',
-	'options'				=> array('sharebuttons_shadow','sharebuttons_simpleflat','sharebuttons_simpleicons_white','sharebuttons_simpleicons_black'),
+	'options'				=> array(
+								'sharebuttons_none',
+								'sharebuttons_shadow',
+								'sharebuttons_simpleflat',
+								'sharebuttons_simpleicons_white',
+								'sharebuttons_simpleicons_black',
+								'sharebuttons_light',
+								'sharebuttons_boxxed',
+								'sharebuttons_boxxed_16'
+							),
 	'reference'				=> &$GLOBALS['TL_LANG']['tl_module'],
-	'default'				=> 'sharebuttons_shadow',
+	'default'				=> 'sharebuttons_none',
 	'sql'                   => "varchar(32) NOT NULL default ''"
 );
 

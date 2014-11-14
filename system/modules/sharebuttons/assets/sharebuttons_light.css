@@ -1,0 +1,55 @@
+/* from http://www.kplitsolutions.com/freebies.html */
+
+.sharebuttons_light > ul > li > a {
+	width:32px;
+	height:32px;
+}
+
+.sharebuttons_light > ul > li > a.facebook {
+	background-image:url('light/32/facebook.png');
+}
+
+.sharebuttons_light > ul > li > a.twitter {
+	background-image:url('light/32/twitter_bird.png');
+}
+
+.sharebuttons_light > ul > li > a.gplus {
+	background-image:url('light/32/gplus.png');
+}
+
+.sharebuttons_light > ul > li > a.linkedin {
+	background-image:url('light/32/linkedin.png');
+}
+
+.sharebuttons_light > ul > li > a.xing {
+	display:none;
+}
+
+.sharebuttons_light > ul > li > a.mail {
+	display:none;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+       only screen and (-o-min-device-pixel-ratio: 13/10),
+       only screen and (min-resolution: 120dpi) 
+{
+	.sharebuttons_light > ul > li > a {
+		background-size:100% auto;
+	}
+
+	.sharebuttons_light > ul > li > a.facebook {
+		background-image:url('light/64/facebook.png');
+	}
+
+	.sharebuttons_light > ul > li > a.twitter {
+		background-image:url('light/64/twitter_bird.png');
+	}
+
+	.sharebuttons_light > ul > li > a.gplus {
+		background-image:url('light/64/gplus.png');
+	}
+
+	.sharebuttons_light > ul > li > a.linkedin {
+		background-image:url('light/64/linkedin.png');
+	}
+}

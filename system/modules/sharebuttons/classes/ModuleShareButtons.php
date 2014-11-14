@@ -39,14 +39,22 @@ class ModuleShareButtons extends Module
         $this->Template->linkedin = $this->sharebuttons_linkedin;
         $this->Template->xing = $this->sharebuttons_xing;
         $this->Template->mail = $this->sharebuttons_mail;
-        $this->Template->usetheme = $this->sharebuttons_usetheme;
+        $this->Template->usecss = $this->sharebuttons_usecss;
         $this->Template->theme = $this->sharebuttons_theme;
 
-        if( $this->sharebuttons_usetheme && TL_MODE == 'FE' )
+        if( $this->sharebuttons_usecss && TL_MODE == 'FE' )
         {
-            if( !is_array( $GLOBALS['TL_CSS'] ) ) $GLOBALS['TL_CSS'] = array();
-            $GLOBALS['TL_CSS'][] = 'system/modules/sharebuttons/assets/sharebuttons_base.css';
-            $GLOBALS['TL_CSS'][] = 'system/modules/sharebuttons/assets/'.$this->sharebuttons_theme.'.css';
+            $base = 'system/modules/sharebuttons/assets/sharebuttons_base.css';
+            $theme = 'system/modules/sharebuttons/assets/'.$this->sharebuttons_theme.'.css';
+
+            if( !is_array( $GLOBALS['TL_CSS'] ) )
+                $GLOBALS['TL_CSS'] = array();
+
+            if( !in_array( $base, $GLOBALS['TL_CSS'] ) )
+                $GLOBALS['TL_CSS'][] = $base;
+
+            if( !in_array( $theme, $GLOBALS['TL_CSS'] ) && $this->sharebuttons_theme != 'sharebuttons_none' )
+                $GLOBALS['TL_CSS'][] = $theme;
         }
     }
 }

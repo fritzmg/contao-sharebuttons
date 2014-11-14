@@ -1,21 +1,25 @@
-ul.sharebuttons {
+.sharebuttons {
+	overflow:hidden;
+}
+
+.sharebuttons > ul {
 	list-style-type:none;
-	margin:0 -4px;
+	margin:-4px;
 	padding:0;
 }
 
-ul.sharebuttons:after {
+.sharebuttons > ul:after {
 	content:"";
 	display:block;
 	clear:both;
 }
 
-ul.sharebuttons > li {
+.sharebuttons > ul > li {
 	float:left;
-	margin:0 4px;
 }
 
-ul.sharebuttons > li > a {
+.sharebuttons > ul > li > a {
+	margin:4px;
 	display:block;
 	white-space:nowrap;
 	overflow:hidden;
