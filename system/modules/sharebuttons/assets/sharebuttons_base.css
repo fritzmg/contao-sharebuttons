@@ -27,3 +27,7 @@
 	background-repeat:no-repeat;
 	background-position:center;
 }
+
+.sharebuttons_none > ul > li > a {
+	text-indent:0;
+}
