@@ -1,6 +1,6 @@
 
 <!-- indexer::stop -->
-<div class="sharebuttons<?php if( $this->usecss ): ?> <?php echo $this->theme; ?><?php endif ;?>">
+<div class="<?php echo $this->class; ?><?php if( $this->usecss ): ?> <?php echo $this->theme; ?><?php endif ;?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 	<ul>
 		<?php if ($this->facebook): ?>
 		<li><a class="facebook" href="share/index.php?p=facebook[&]u=<?php echo urlencode($this->Environment->base . $this->Environment->request); ?>[&]t=<?php echo urlencode($objPage->pageTitle); ?>" rel="nofollow" title="{{label::sharebuttons:share_on_facebook}}" onclick="window.open(this.href, '', 'width=760,height=470,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no'); return false;">Facebook</a></li>
