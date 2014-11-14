@@ -1,4 +1,5 @@
 
+<!-- indexer::stop -->
 <div class="sharebuttons<?php if( $this->usecss ): ?> <?php echo $this->theme; ?><?php endif ;?>">
 	<ul>
 		<?php if ($this->facebook): ?>
@@ -21,3 +22,4 @@
 		<?php endif; ?>
 	</ul>
 </div>
+<!-- indexer::continue -->
