@@ -16,35 +16,60 @@
 
 class ShareButtons extends \Frontend
 {
+    public static function createShareButtons( $networks, $theme = '', $template = 'sharebuttons_default', $url = null, $title = null )
+    {
+        // access to page
+        global $objPage;
+
+        // try to deserialize
+        if( is_string( $networks ) )
+            $networks = deserialize( $networks );
+
+        // create share buttons template
+        $objButtonsTemplate = new FrontendTemplate( $template );
+
+        // assign enabled networks to template
+        foreach( $networks as $network )
+            $objButtonsTemplate->$network = true;
+
+        // assign url, title, theme to template
+        $objButtonsTemplate->url   = $url   ?: rawurlencode( \Environment::get('base') . \Environment::get('request') );
+        $objButtonsTemplate->title = $title ?: rawurlencode( $objPage->pageTitle );
+        $objButtonsTemplate->theme = $theme;
+
+        // insert CSS if necessary
+        if( $theme && TL_MODE == 'FE' )
+        {
+            $css_base  = 'system/modules/sharebuttons/assets/sharebuttons_base.css';
+            $css_theme = 'system/modules/sharebuttons/assets/'.$theme.'.css';
+
+            if( !is_array( $GLOBALS['TL_CSS'] ) )
+                $GLOBALS['TL_CSS'] = array();
+
+            if( !in_array( $css_base, $GLOBALS['TL_CSS'] ) )
+                $GLOBALS['TL_CSS'][] = $css_base;
+
+            if( !in_array( $css_theme, $GLOBALS['TL_CSS'] ) && file_exists( TL_ROOT . '/' . $css_theme ) )
+                $GLOBALS['TL_CSS'][] = $css_theme;
+        }
+
+        // return parsed template
+        return $objButtonsTemplate->parse();
+    }
+
     public function parseArticles(&$objTemplate, $objArticle, $news)
     {
         if( $objArticle['sharebuttons_networks'] )
         {
-            $sharebuttons_networks = deserialize( $objArticle['sharebuttons_networks'] );
-            $sharebuttons_theme = $objArticle['sharebuttons_theme'];
+            // extract data from news article
+            $networks = $objArticle['sharebuttons_networks'];
+            $theme    = $objArticle['sharebuttons_theme'];
+            $template = $objArticle['sharebuttons_template'];
+            $url = rawurlencode( \Environment::get('url').'/'.$objTemplate->link );
+            $title = rawurlencode( $objArticle['headline'] );
 
-            $objButtonsTemplate = new FrontendTemplate( $objArticle['sharebuttons_template'] );
-            foreach( $sharebuttons_networks as $v )
-                $objButtonsTemplate->$v = true;
-            $objButtonsTemplate->url = rawurlencode( \Environment::get('url').'/'.$objTemplate->link );
-            $objButtonsTemplate->title = rawurlencode( $objArticle['headline'] );
-            $objButtonsTemplate->theme = $sharebuttons_theme;
-            $objTemplate->sharebuttons = $objButtonsTemplate->parse();
-
-            if( $sharebuttons_theme && TL_MODE == 'FE' )
-            {
-                $css_base  = 'system/modules/sharebuttons/assets/sharebuttons_base.css';
-                $css_theme = 'system/modules/sharebuttons/assets/'.$sharebuttons_theme.'.css';
-
-                if( !is_array( $GLOBALS['TL_CSS'] ) )
-                    $GLOBALS['TL_CSS'] = array();
-
-                if( !in_array( $css_base, $GLOBALS['TL_CSS'] ) )
-                    $GLOBALS['TL_CSS'][] = $css_base;
-
-                if( !in_array( $css_theme, $GLOBALS['TL_CSS'] ) && $sharebuttons_theme != 'sharebuttons_text' )
-                    $GLOBALS['TL_CSS'][] = $css_theme;
-            }
+            // create the share buttons
+            $objTemplate->sharebuttons = self::createShareButtons( $networks, $theme, $template, $url, $title );
         }
     }
 }

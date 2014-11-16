@@ -17,15 +17,20 @@
 /**
  * Front end modules
  */
-array_insert($GLOBALS['FE_MOD']['miscellaneous'], 1, array
-(
-	'sharebuttons' => 'ModuleShareButtons'
-));
+$GLOBALS['FE_MOD']['miscellaneous']['sharebuttons'] = 'ModuleShareButtons';
+
+
+/**
+ * Content elements
+ */
+$GLOBALS['TL_CTE']['links']['sharebuttons'] = 'ContentShareButtons';
+
 
 /**
  * Hooks
  */
 $GLOBALS['TL_HOOKS']['parseArticles'][] = array('ShareButtons','parseArticles');
+
 
 /**
  * Custom settings
@@ -41,12 +46,12 @@ $GLOBALS['sharebuttons']['networks'] = array(
 
 $GLOBALS['sharebuttons']['themes'] = array(
 	''                               => '-',
-	'text'              => 'Text',
-	'boxxed'            => 'Boxxed',
-	'boxxed_16'         => 'Boxxed (16px)',
-	'light'             => 'Light',
-	'shadow'            => 'Shadow',
-	'simpleflat'        => 'Simple Flat',
-	'simpleicons_black' => 'Simple Icons Black',
-	'simpleicons_white' => 'Simple Icons White'
+	'sharebuttons_text'              => 'Text',
+	'sharebuttons_boxxed'            => 'Boxxed',
+	'sharebuttons_boxxed_16'         => 'Boxxed (16px)',
+	'sharebuttons_light'             => 'Light',
+	'sharebuttons_shadow'            => 'Shadow',
+	'sharebuttons_simpleflat'        => 'Simple Flat',
+	'sharebuttons_simpleicons_black' => 'Simple Icons Black',
+	'sharebuttons_simpleicons_white' => 'Simple Icons White'
 );
