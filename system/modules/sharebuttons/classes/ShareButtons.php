@@ -16,7 +16,7 @@
 
 class ShareButtons extends \Frontend
 {
-    public static function createShareButtons( $networks, $theme = '', $template = 'sharebuttons_default', $url = null, $title = null )
+    public static function createShareButtons( $networks, $theme = 'sharebuttons_none', $template = 'sharebuttons_default', $url = null, $title = null )
     {
         // access to page
         global $objPage;
@@ -24,6 +24,10 @@ class ShareButtons extends \Frontend
         // try to deserialize
         if( is_string( $networks ) )
             $networks = deserialize( $networks );
+
+        // process theme
+        if( $theme == 'sharebuttons_none' || $theme == 'none' )
+            $theme = '';
 
         // create share buttons template
         $objButtonsTemplate = new FrontendTemplate( $template );
@@ -38,9 +42,9 @@ class ShareButtons extends \Frontend
         $objButtonsTemplate->theme = $theme;
 
         // insert CSS if necessary
-        if( $theme && TL_MODE == 'FE' )
+        if( $theme )
         {
-            $css_base  = 'system/modules/sharebuttons/assets/sharebuttons_base.css';
+            $css_base  = 'system/modules/sharebuttons/assets/base.css';
             $css_theme = 'system/modules/sharebuttons/assets/'.$theme.'.css';
 
             if( !is_array( $GLOBALS['TL_CSS'] ) )

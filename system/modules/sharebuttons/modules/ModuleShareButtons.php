@@ -27,7 +27,9 @@ class ModuleShareButtons extends \Module
      */
     protected function compile()
     {
-        $this->Template->sharebuttons = ShareButtons::createShareButtons( $this->sharebuttons_networks, $this->sharebuttons_theme, $this->sharebuttons_template );
+        $this->Template->sharebuttons = ShareButtons::createShareButtons( $this->sharebuttons_networks, 
+                                                                          $this->sharebuttons_theme, 
+                                                                          $this->sharebuttons_template );
     }
 }
 ?>

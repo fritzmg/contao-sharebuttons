@@ -1,7 +1,7 @@
 
 <!-- indexer::stop -->
 <div class="sharebuttons">
-	<ul class="<?php echo $this->theme; ?>">
+	<ul<?php if( $this->theme ): ?> class="theme <?php echo $this->theme; ?>"<?php endif; ?>>
 		<?php if ($this->facebook): ?>
 		<li><a class="facebook" href="share/index.php?p=facebook[&]u=<?php echo $this->url; ?>[&]t=<?php echo $this->title; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_facebook}}" onclick="window.open(this.href, '', 'width=700,height=470,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no'); return false;">Facebook</a></li>
 		<?php endif; ?>

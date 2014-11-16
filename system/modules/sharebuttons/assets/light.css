@@ -1,31 +1,31 @@
 /* from http://www.kplitsolutions.com/freebies.html */
 
-ul.sharebuttons_light > li > a {
+.sharebuttons > ul.light > li > a {
 	width:32px;
 	height:32px;
 }
 
-ul.sharebuttons_light > li > a.facebook {
+.sharebuttons > ul.light > li > a.facebook {
 	background-image:url('light/32/facebook.png');
 }
 
-ul.sharebuttons_light > li > a.twitter {
+.sharebuttons > ul.light > li > a.twitter {
 	background-image:url('light/32/twitter_bird.png');
 }
 
-ul.sharebuttons_light > li > a.gplus {
+.sharebuttons > ul.light > li > a.gplus {
 	background-image:url('light/32/gplus.png');
 }
 
-ul.sharebuttons_light > li > a.linkedin {
+.sharebuttons > ul.light > li > a.linkedin {
 	background-image:url('light/32/linkedin.png');
 }
 
-ul.sharebuttons_light > li > a.xing {
+.sharebuttons > ul.light > li > a.xing {
 	text-indent:0;
 }
 
-ul.sharebuttons_light > li > a.mail {
+.sharebuttons > ul.light > li > a.mail {
 	text-indent:0;
 }
 
@@ -33,23 +33,23 @@ ul.sharebuttons_light > li > a.mail {
        only screen and (-o-min-device-pixel-ratio: 13/10),
        only screen and (min-resolution: 120dpi) 
 {
-	ul.sharebuttons_light > li > a {
+	.sharebuttons > ul.light > li > a {
 		background-size:100% auto;
 	}
 
-	ul.sharebuttons_light > li > a.facebook {
+	.sharebuttons > ul.light > li > a.facebook {
 		background-image:url('light/64/facebook.png');
 	}
 
-	ul.sharebuttons_light > li > a.twitter {
+	.sharebuttons > ul.light > li > a.twitter {
 		background-image:url('light/64/twitter_bird.png');
 	}
 
-	ul.sharebuttons_light > li > a.gplus {
+	.sharebuttons > ul.light > li > a.gplus {
 		background-image:url('light/64/gplus.png');
 	}
 
-	ul.sharebuttons_light > li > a.linkedin {
+	.sharebuttons > ul.light > li > a.linkedin {
 		background-image:url('light/64/linkedin.png');
 	}
 }

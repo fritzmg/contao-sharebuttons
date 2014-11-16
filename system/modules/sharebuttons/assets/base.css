@@ -2,23 +2,23 @@
 	overflow:hidden;
 }
 
-.sharebuttons > ul {
+.sharebuttons > ul.theme {
 	list-style-type:none;
 	margin:-4px;
 	padding:0;
 }
 
-.sharebuttons > ul:after {
+.sharebuttons > ul.theme:after {
 	content:"";
 	display:block;
 	clear:both;
 }
 
-.sharebuttons > ul > li {
+.sharebuttons > ul.theme > li {
 	float:left;
 }
 
-.sharebuttons > ul > li > a {
+.sharebuttons > ul.theme > li > a {
 	margin:4px;
 	display:block;
 	white-space:nowrap;
@@ -28,6 +28,6 @@
 	background-position:center;
 }
 
-ul.sharebuttons_text > li > a {
+ul.theme.sharebuttons_text > li > a {
 	text-indent:0;
 }
