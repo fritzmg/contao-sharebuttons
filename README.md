@@ -27,7 +27,7 @@ From top to bottom:
 - Simple Icons Black
 - Simple Icons White
 
-There is also a theme called "Text", which simply aligns the elements horizontally, but leaves the textual content of each button visible.
+There is also a theme called "Text", which simply aligns the elements horizontally, but leaves the textual content of each button visible. Be aware that not all themes support all buttons.
 
 In each element you can also set the template, if you happen to need a different structure in some cases.
 
