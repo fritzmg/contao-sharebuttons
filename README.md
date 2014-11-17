@@ -25,7 +25,7 @@ From top to bottom:
 - Shadow
 - Simple Flat
 - Simple Icons Black
-- Simple Icons White (background not defined by default)
+- Simple Icons White (grey background added for visibility)
 
 Be aware that not all themes support all buttons. 
 
@@ -43,4 +43,4 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_networks']['default'] = ar
 $GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_theme']['default'] = 'boxxed';
 ```
 
-Have a look at the `$GLOBALS['sharebuttons']['themes']` array in `config/config.php` in order to find the key-string for your desired theme.
+Have a look at the `$GLOBALS['sharebuttons']['themes']` array in [`config/config.php`](https://github.com/fritzmg/contao-sharebuttons/blob/master/system/modules/sharebuttons/config/config.php) in order to find the key-string for your desired theme.
