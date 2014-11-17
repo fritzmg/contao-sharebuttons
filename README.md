@@ -55,4 +55,4 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_networks']['default'] = ar
 $GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_theme']['default'] = 'boxxed';
 ```
 
-Have a look at the `$GLOBALS['sharebuttons']['themes']` and `$GLOBALS['sharebuttons']['networks'] array in [`config/config.php`](https://github.com/fritzmg/contao-sharebuttons/blob/master/system/modules/sharebuttons/config/config.php) in order to find the key-string for your desired networks and theme.
+Have a look at the `$GLOBALS['sharebuttons']['themes']` and `$GLOBALS['sharebuttons']['networks']` array in [`config/config.php`](https://github.com/fritzmg/contao-sharebuttons/blob/master/system/modules/sharebuttons/config/config.php) in order to find the key-string for your desired networks and theme.
