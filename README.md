@@ -25,7 +25,7 @@ From top to bottom:
 - Shadow
 - Simple Flat
 - Simple Icons Black
-- Simple Icons White
+- Simple Icons White (background not defined by default)
 
 Be aware that not all themes support all buttons. 
 
