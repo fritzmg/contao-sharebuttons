@@ -1,16 +1,9 @@
 Contao Share Buttons
 ===================
 
-Simple extension to provide share buttons as a module, content element and for news articles in Contao.
+Simple extension to provide share buttons as a module, content element and for news articles in Contao. In each case you have the same set of options.
 
-In each case you can define which share buttons should be included:
-
-- Facebook
-- Twitter
-- Google+
-- LinkedIn
-- Xing (not working at the moment)
-- E-Mail
+![Element settings](https://raw.githubusercontent.com/fritzmg/contao-sharebuttons/master/element.png)
 
 ## Themes
 
