@@ -16,7 +16,7 @@
 
 class ShareButtons extends \Frontend
 {
-    public static function createShareButtons( $networks, $theme = 'sharebuttons_none', $template = 'sharebuttons_default', $url = null, $title = null )
+    public static function createShareButtons( $networks, $theme = '', $template = 'sharebuttons_default', $url = null, $title = null )
     {
         // access to page
         global $objPage;
@@ -45,7 +45,7 @@ class ShareButtons extends \Frontend
         if( $theme )
         {
             $css_base  = 'system/modules/sharebuttons/assets/base.css';
-            $css_theme = 'system/modules/sharebuttons/assets/'.$theme.'.css';
+            $css_theme = $GLOBALS['sharebuttons']['themes'][ $theme ][1];
 
             if( !is_array( $GLOBALS['TL_CSS'] ) )
                 $GLOBALS['TL_CSS'] = array();
@@ -53,7 +53,7 @@ class ShareButtons extends \Frontend
             if( !in_array( $css_base, $GLOBALS['TL_CSS'] ) )
                 $GLOBALS['TL_CSS'][] = $css_base;
 
-            if( !in_array( $css_theme, $GLOBALS['TL_CSS'] ) && file_exists( TL_ROOT . '/' . $css_theme ) )
+            if( !in_array( $css_theme, $GLOBALS['TL_CSS'] ) && is_file( TL_ROOT . '/' . $css_theme ) )
                 $GLOBALS['TL_CSS'][] = $css_theme;
         }
 

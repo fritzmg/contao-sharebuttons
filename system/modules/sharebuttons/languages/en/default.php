@@ -14,6 +14,7 @@
  */
 
 
+$GLOBALS['TL_LANG']['sharebuttons']['no_theme'] = "No theme (no style will be applied)";
 $GLOBALS['TL_LANG']['sharebuttons']['share_title'] = "Share:";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_facebook'] = "share on Facebook";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_twitter'] = "share on Twitter";

@@ -1,0 +1,30 @@
+/* original contao icons */
+
+.sharebuttons > ul.contao > li > a {
+	width:16px;
+	height:16px;
+}
+
+.sharebuttons > ul.contao > li > a.facebook {
+	background-image:url('../../../../assets/contao/images/facebook.gif');
+}
+
+.sharebuttons > ul.contao > li > a.twitter {
+	background-image:url('../../../../assets/contao/images/twitter.gif');
+}
+
+.sharebuttons > ul.contao > li > a.gplus {
+	background-image:url('../../../../assets/contao/images/gplus.gif');
+}
+
+.sharebuttons > ul.contao > li > a.linkedin {
+	text-indent:0;
+}
+
+.sharebuttons > ul.contao > li > a.xing {
+	text-indent:0;
+}
+
+.sharebuttons > ul.contao > li > a.mail {
+	text-indent:0;
+}

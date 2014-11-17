@@ -28,6 +28,6 @@
 	background-position:center;
 }
 
-ul.theme.sharebuttons_text > li > a {
+.sharebuttons > ul.text > li > a {
 	text-indent:0;
 }

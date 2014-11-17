@@ -45,13 +45,13 @@ $GLOBALS['sharebuttons']['networks'] = array(
 );
 
 $GLOBALS['sharebuttons']['themes'] = array(
-	'none'              => '-',
-	'text'              => 'Text',
-	'boxxed'            => 'Boxxed',
-	'boxxed_16'         => 'Boxxed (16px)',
-	'light'             => 'Light',
-	'shadow'            => 'Shadow',
-	'simpleflat'        => 'Simple Flat',
-	'simpleicons_black' => 'Simple Icons Black',
-	'simpleicons_white' => 'Simple Icons White'
+	'text'              => array('Text'              ,''),
+	'boxxed'            => array('Boxxed'            ,'system/modules/sharebuttons/assets/boxxed.css'),
+	'boxxed_16'         => array('Boxxed (16px)'     ,'system/modules/sharebuttons/assets/boxxed_16.css'),
+	'contao'            => array('Contao'            ,'system/modules/sharebuttons/assets/contao.css'),
+	'light'             => array('Light'             ,'system/modules/sharebuttons/assets/light.css'),
+	'shadow'            => array('Shadow'            ,'system/modules/sharebuttons/assets/shadow.css'),
+	'simpleflat'        => array('Simple Flat'       ,'system/modules/sharebuttons/assets/simpleflat.css'),
+	'simpleicons_black' => array('Simple Icons Black','system/modules/sharebuttons/assets/simpleicons_black.css'),
+	'simpleicons_white' => array('Simple Icons White','system/modules/sharebuttons/assets/simpleicons_white.css')
 );

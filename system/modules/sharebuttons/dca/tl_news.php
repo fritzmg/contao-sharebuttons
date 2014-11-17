@@ -40,7 +40,10 @@ class tl_news_sharebuttons extends tl_news
 
 	public function getButtonThemes()
 	{
-		return $GLOBALS['sharebuttons']['themes'];
+		$themes = array( '' => $GLOBALS['TL_LANG']['sharebuttons']['no_theme'] );
+		foreach( $GLOBALS['sharebuttons']['themes'] as $k => $v )
+			$themes[$k] = $v[0];
+		return $themes;
 	}
 
 	public function getSharebuttonsTemplates(DataContainer $dc)
