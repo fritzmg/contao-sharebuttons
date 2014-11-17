@@ -12,6 +12,8 @@ In each case you can define which share buttons should be included:
 - Xing (not working at the moment)
 - E-Mail
 
+## Themes
+
 In each case you can also set an optional theme. If you select a theme, basic styling is included for the buttons, making them align horizontally and applying background images. These are the current available themes:
 
 ![Available themes](https://raw.githubusercontent.com/fritzmg/contao-sharebuttons/master/buttons.png)
@@ -31,7 +33,17 @@ Be aware that not all themes support all buttons.
 
 There is also a theme called "Text", which simply aligns the elements horizontally, but leaves the textual content of each button visible.
 
-You can also set the template in each element, if you happen to need a different structure in some cases.
+## Template
+
+You can also set the template in each element, if you happen to need a different structure in some cases. If you want to use your own template, create one with a name that starte with `sharebuttons_` in your templates folder.
+
+## News
+
+In order to use the share buttons in your news articles, you need to add the following to your news template:
+
+```php
+<?php echo $this->sharebuttons; ?>
+```
 
 If you use the share buttons in news, it may be useful to define a default value for the selected search buttons (and may be theme). You can do this via the `dcaconfig.php` like so:
 
