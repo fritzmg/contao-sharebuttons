@@ -24,6 +24,10 @@ class ShareButtons extends \Frontend
         if( is_string( $networks ) )
             $networks = deserialize( $networks );
 
+        // if there are no networks, don't do anything
+        if( count( $networks ) == 0 )
+            return '';
+
         // process theme
         if( $theme == 'sharebuttons_none' || $theme == 'none' )
             $theme = '';
