@@ -35,7 +35,7 @@ There is also a theme called "Text", which simply aligns the elements horizontal
 
 ## Template
 
-You can also set the template in each element, if you happen to need a different structure in some cases. If you want to use your own template, create one with a name that starte with `sharebuttons_` in your templates folder.
+You can also set the template in each element, if you happen to need a different structure in some cases. If you want to use your own template, create one with a name that starts with `sharebuttons_` in your templates folder.
 
 ## News
 
