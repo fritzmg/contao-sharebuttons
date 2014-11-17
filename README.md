@@ -27,9 +27,11 @@ From top to bottom:
 - Simple Icons Black
 - Simple Icons White
 
-There is also a theme called "Text", which simply aligns the elements horizontally, but leaves the textual content of each button visible. Be aware that not all themes support all buttons.
+Be aware that not all themes support all buttons. 
 
-In each element you can also set the template, if you happen to need a different structure in some cases.
+There is also a theme called "Text", which simply aligns the elements horizontally, but leaves the textual content of each button visible.
+
+You can also set the template in each element, if you happen to need a different structure in some cases.
 
 If you use the share buttons in news, it may be useful to define a default value for the selected search buttons (and may be theme). You can do this via the `dcaconfig.php` like so:
 
@@ -40,3 +42,5 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_networks']['default'] = ar
 // this pre-selects the "Boxxed" theme
 $GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_theme']['default'] = 'boxxed';
 ```
+
+Have a look at the `$GLOBALS['sharebuttons']['themes']` array in `config/config.php` in order to find the key-string for your desired theme.
