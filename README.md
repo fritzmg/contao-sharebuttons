@@ -14,6 +14,8 @@ In each case you can define which share buttons should be included:
 
 In each case you can also set an optional theme. If you select a theme, basic styling is included for the buttons, making them align horizontally and applying background images. These are the current available themes:
 
+![Available themes](https://raw.githubusercontent.com/fritzmg/contao-sharebuttons/master/buttons.png)
+
 From top to bottom:
 
 - Boxxed
