@@ -15,7 +15,7 @@
 		<li><a class="linkedin" href="http://www.linkedin.com/shareArticle?mini=true[&]url=<?php echo $this->url; ?>[&]title=><?php echo $this->title; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_linkedin}}" onclick="window.open(this.href, '', 'width=520,height=570,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no'); return false;">LinkedIn</a></li>
 		<?php endif; ?>
 		<?php if ($this->xing): ?>
-		<li><a class="xing" href="https://www.xing.com/app/user?op=share_add;url=<?php echo $this->url; ?>;title=<?php echo $this->title; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_xing}}" onclick="window.open(this.href, '', 'width=760,height=470,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no'); return false;">Xing</a></li>
+		<li><a class="xing" href="https://www.xing.com/social_plugins/share/new?sc_p=xing-share&h=1&url=<?php echo $this->url; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_xing}}" onclick="window.open(this.href, '', 'width=760,height=470,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no'); return false;">Xing</a></li>
 		<?php endif; ?>
 		<?php if ($this->mail): ?>
 		<li><a class="mail" href="mailto:?subject={{label::sharebuttons:mail_subject}}:%20<?php echo $this->title; ?>[&]body=<?php echo $this->url; ?>">Mail</a></li>
