@@ -1,0 +1,31 @@
+/* source: http://www.twelveskip.com/resources/icons/1091/boxxed-flat-social-media-icons */
+
+.sharebuttons > ul.boxxed > li > a {
+	width:32px;
+	height:32px;
+	background-image:url('sprites.png');
+}
+
+.sharebuttons > ul.boxxed > li > a.facebook {
+	background-position:-40px 0;
+}
+
+.sharebuttons > ul.boxxed > li > a.twitter {
+	background-position:-160px 0;
+}
+
+.sharebuttons > ul.boxxed > li > a.gplus {
+	background-position:-80px 0;
+}
+
+.sharebuttons > ul.boxxed > li > a.linkedin {
+	background-position:-120px 0;
+}
+
+.sharebuttons > ul.boxxed > li > a.xing {
+	background-position:-200px 0;
+}
+
+.sharebuttons > ul.boxxed > li > a.mail {
+	background-position:0 0;
+}

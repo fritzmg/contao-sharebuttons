@@ -1,0 +1,64 @@
+/* source: http://www.twelveskip.com/resources/icons/1091/boxxed-flat-social-media-icons */
+
+.sharebuttons > ul.boxxed_16 > li > a {
+	width:16px;
+	height:16px;
+	background-image:url('sprites.png');
+}
+
+.sharebuttons > ul.boxxed_16 > li > a.facebook {
+	background-position:-20px -40px;
+}
+
+.sharebuttons > ul.boxxed_16 > li > a.twitter {
+	background-position:-80px -40px;
+}
+
+.sharebuttons > ul.boxxed_16 > li > a.gplus {
+	background-position:-40px -40px;
+}
+
+.sharebuttons > ul.boxxed_16 > li > a.linkedin {
+	background-position:-60px -40px;
+}
+
+.sharebuttons > ul.boxxed_16 > li > a.xing {
+	background-position:-100px -40px;
+}
+
+.sharebuttons > ul.boxxed_16 > li > a.mail {
+	background-position:0 -40px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+       only screen and (-o-min-device-pixel-ratio: 13/10),
+       only screen and (min-resolution: 120dpi) 
+{
+	.sharebuttons > ul.boxxed_16 > li > a {
+		background-size:auto 28px;
+	}
+
+	.sharebuttons > ul.boxxed_16 > li > a.facebook {
+		background-position:-20px 0;
+	}
+
+	.sharebuttons > ul.boxxed_16 > li > a.twitter {
+		background-position:-80px 0;
+	}
+
+	.sharebuttons > ul.boxxed_16 > li > a.gplus {
+		background-position:-40px 0;
+	}
+
+	.sharebuttons > ul.boxxed_16 > li > a.linkedin {
+		background-position:-60px 0;
+	}
+
+	.sharebuttons > ul.boxxed_16 > li > a.xing {
+		background-position:-100px 0;
+	}
+
+	.sharebuttons > ul.boxxed_16 > li > a.mail {
+		background-position:0 0;
+	}
+}

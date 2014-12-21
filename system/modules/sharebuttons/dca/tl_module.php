@@ -76,5 +76,3 @@ class tl_module_sharebuttons extends Backend
 		return $this->getTemplateGroup('sharebuttons_', $intPid);
 	}
 }
-
-?>
