@@ -3,7 +3,7 @@
 .sharebuttons > ul.boxxed > li > a {
 	width:32px;
 	height:32px;
-	background-image:url('sprites.png');
+	background-image:url('sprites-32.png');
 }
 
 .sharebuttons > ul.boxxed > li > a.facebook {
