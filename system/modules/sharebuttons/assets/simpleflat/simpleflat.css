@@ -3,28 +3,29 @@
 .sharebuttons > ul.simpleflat > li > a {
 	width:32px;
 	height:32px;
+	background-image:url('sprites-32.png');
 }
 
 .sharebuttons > ul.simpleflat > li > a.facebook {
-	background-image:url('simpleflat/facebook.png');
+	background-position:-40px 0;
 }
 
 .sharebuttons > ul.simpleflat > li > a.twitter {
-	background-image:url('simpleflat/twitter.png');
+	background-position:-160px 0;
 }
 
 .sharebuttons > ul.simpleflat > li > a.gplus {
-	background-image:url('simpleflat/gplus.png');
+	background-position:-80px 0;
 }
 
 .sharebuttons > ul.simpleflat > li > a.linkedin {
-	background-image:url('simpleflat/linkedin.png');
+	background-position:-120px 0;
 }
 
 .sharebuttons > ul.simpleflat > li > a.xing {
-	text-indent:0;
+	background-position:-200px 0;
 }
 
 .sharebuttons > ul.simpleflat > li > a.mail {
-	background-image:url('simpleflat/email.png');
+	background-position:0 0;
 }

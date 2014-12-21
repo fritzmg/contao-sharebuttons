@@ -49,8 +49,8 @@ $GLOBALS['sharebuttons']['themes'] = array(
 	'boxxed_16'         => array('Boxxed (16px)'     ,'system/modules/sharebuttons/assets/boxxed/boxxed_16.css'),
 	'contao'            => array('Contao'            ,'system/modules/sharebuttons/assets/contao.css'),
 	'light'             => array('Light'             ,'system/modules/sharebuttons/assets/light/light.css'),
-	'shadow'            => array('Shadow'            ,'system/modules/sharebuttons/assets/shadow.css'),
-	'simpleflat'        => array('Simple Flat'       ,'system/modules/sharebuttons/assets/simpleflat.css'),
-	'simpleicons_black' => array('Simple Icons Black','system/modules/sharebuttons/assets/simpleicons_black.css'),
-	'simpleicons_white' => array('Simple Icons White','system/modules/sharebuttons/assets/simpleicons_white.css')
+	'shadow'            => array('Shadow'            ,'system/modules/sharebuttons/assets/shadow/shadow.css'),
+	'simpleflat'        => array('Simple Flat'       ,'system/modules/sharebuttons/assets/simpleflat/simpleflat.css'),
+	'simpleicons_black' => array('Simple Icons Black','system/modules/sharebuttons/assets/simpleicons/simpleicons_black.css'),
+	'simpleicons_white' => array('Simple Icons White','system/modules/sharebuttons/assets/simpleicons/simpleicons_white.css')
 );

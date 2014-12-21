@@ -22,9 +22,15 @@ From top to bottom:
 - Simple Icons Black
 - Simple Icons White (grey background added for visibility)
 
-Be aware that not all themes support all buttons. 
+The "Contao" theme uses Contao's own icons, however only Facebook, Twitter and Google+ is available there.  There is also a theme called "Text", which simply aligns the elements horizontally, but leaves the textual content of each button visible.
 
-There is also a theme called "Text", which simply aligns the elements horizontally, but leaves the textual content of each button visible.
+The following themes offer higher resolution images for devices with high DPI:
+
+- Boxxed (16px)
+- Light
+- Shadow
+- Simple Icons Black 
+- Simple Icons White
 
 ## Template
 
@@ -49,3 +55,13 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_theme']['default'] = 'boxx
 ```
 
 Have a look at the `$GLOBALS['sharebuttons']['themes']` and `$GLOBALS['sharebuttons']['networks']` array in [`config/config.php`](https://github.com/fritzmg/contao-sharebuttons/blob/master/system/modules/sharebuttons/config/config.php) in order to find the key-string for your desired networks and theme.
+
+## Attributions
+
+### Icon sources
+
+- Boxxed: http://www.twelveskip.com/resources/icons/1091/boxxed-flat-social-media-icons
+- Light: http://www.kplitsolutions.com/freebies.html
+- Shadow: http://wegraphics.net/downloads/free-long-shadow-social-media-icons/
+- Simple Flat: http://simplesharingbuttons.com/
+- Simple Icons: http://simpleicons.org/
