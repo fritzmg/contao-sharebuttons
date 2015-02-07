@@ -80,5 +80,3 @@ class ShareButtons extends \Frontend
         }
     }
 }
-
-?>

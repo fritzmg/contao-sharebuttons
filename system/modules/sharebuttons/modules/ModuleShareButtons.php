@@ -31,4 +31,3 @@ class ModuleShareButtons extends \Module
                                                                           $this->sharebuttons_template );
     }
 }
-?>

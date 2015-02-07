@@ -31,4 +31,3 @@ class ContentShareButtons extends \ContentElement
                                                                           $this->sharebuttons_template );
     }
 }
-?>
