@@ -54,10 +54,10 @@ class ShareButtons extends \Frontend
                 $GLOBALS['TL_CSS'] = array();
 
             if( !in_array( $css_base, $GLOBALS['TL_CSS'] ) )
-                $GLOBALS['TL_CSS'][] = $css_base;
+                $GLOBALS['TL_CSS'][] = $css_base.'||static';
 
             if( !in_array( $css_theme, $GLOBALS['TL_CSS'] ) && is_file( TL_ROOT . '/' . $css_theme ) )
-                $GLOBALS['TL_CSS'][] = $css_theme;
+                $GLOBALS['TL_CSS'][] = $css_theme.'||static';
         }
 
         // return parsed template
