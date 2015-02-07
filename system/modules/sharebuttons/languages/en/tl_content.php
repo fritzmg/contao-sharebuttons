@@ -19,5 +19,3 @@ $GLOBALS['TL_LANG']['tl_content']['sharebuttons_legend'] = "Share buttons";
 $GLOBALS['TL_LANG']['tl_content']['sharebuttons_networks'] = array('Share buttons','Choose the share buttons to be shown');
 $GLOBALS['TL_LANG']['tl_content']['sharebuttons_template'] = array('Template','Used Template for frontend rendering. Starts with sharebuttons_');
 $GLOBALS['TL_LANG']['tl_content']['sharebuttons_theme'] = array('Theme','Choose an optional theme for the buttons');
-
-?>

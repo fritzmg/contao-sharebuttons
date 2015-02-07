@@ -21,5 +21,3 @@ $GLOBALS['TL_LANG']['sharebuttons']['share_on_gplus'] = "auf Google+ teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_linkedin'] = "auf LinkedIn teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_xing'] = "auf Xing teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['mail_subject'] = "Website Empfehlung";
-
-?>
