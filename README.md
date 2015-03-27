@@ -63,5 +63,5 @@ Have a look at the `$GLOBALS['sharebuttons']['themes']` and `$GLOBALS['sharebutt
 - Boxxed: http://www.twelveskip.com/resources/icons/1091/boxxed-flat-social-media-icons
 - Light: http://www.kplitsolutions.com/freebies.html
 - Shadow: http://wegraphics.net/downloads/free-long-shadow-social-media-icons/
-- Simple Flat: http://simplesharingbuttons.com/
+- Simple Flat: http://iconsandcoffee.com/
 - Simple Icons: http://simpleicons.org/
