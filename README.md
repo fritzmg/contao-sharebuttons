@@ -44,7 +44,7 @@ In order to use the share buttons in your news articles, you need to add the fol
 <?php echo $this->sharebuttons; ?>
 ```
 
-If you use the share buttons in news, it may be useful to define a default value for the selected search buttons (and may be theme). You can do this via the `dcaconfig.php` like so:
+Using the share buttons in news articles this way is especially important, if you want to show share buttons in a news list - otherwise the url and title will not be correct (since the share buttons just the the url and title of the current page otherwise). If you use the share buttons in news this way, it may be useful to define a default value for the selected search buttons (and may be theme). You can do this via the `dcaconfig.php` like so:
 
 ```php
 // this pre-selects the Facebook, Twitter and Google+ share button
