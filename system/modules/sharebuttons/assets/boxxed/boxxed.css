@@ -29,3 +29,15 @@
 .sharebuttons > ul.boxxed > li > a.mail {
 	background-position:0 0;
 }
+
+.sharebuttons > ul.boxxed > li > a.tumblr {
+	background-position:-240px 0;
+}
+
+.sharebuttons > ul.boxxed > li > a.pinterest {
+	background-position:-280px 0;
+}
+
+.sharebuttons > ul.boxxed > li > a.reddit {
+	background-position:-320px 0;
+}

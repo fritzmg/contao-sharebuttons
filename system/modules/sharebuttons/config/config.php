@@ -5,7 +5,7 @@
  *
  * simple extension to provide a share buttons module
  * 
- * @copyright inspiredminds 2014
+ * @copyright inspiredminds 2015
  * @package   sharebuttons
  * @link      http://www.inspiredminds.at
  * @author    Fritz Michael Gschwantner <fmg@inspiredminds.at>
@@ -40,7 +40,10 @@ $GLOBALS['sharebuttons']['networks'] = array(
 	'gplus' => 'Google+',
 	'linkedin' => 'LinkedIn',
 	'xing' => 'Xing',
-	'mail' => 'E-Mail'
+	'mail' => 'E-Mail',
+	'tumblr' => 'tumblr',
+	'pinterest' => 'Pinterest',
+	'reddit' => 'Reddit'
 );
 
 $GLOBALS['sharebuttons']['themes'] = array(
