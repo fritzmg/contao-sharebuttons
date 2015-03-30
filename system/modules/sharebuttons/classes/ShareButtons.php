@@ -44,7 +44,7 @@ class ShareButtons extends \Frontend
         $objButtonsTemplate->title       = $title ?: rawurlencode( $objPage->pageTitle?: $objPage->title );
         $objButtonsTemplate->theme       = $theme;
         $objButtonsTemplate->image       = $GLOBALS['share_image'] ? rawurlencode( $GLOBALS['share_image'] ) : '';
-        $objButtonsTemplate->description = $description ?: rawurlencode( $objPage->description );
+        $objButtonsTemplate->description = $description ?: rawurlencode( strip_tags( $objPage->description ) );
 
         // insert CSS if necessary
         if( $theme )
