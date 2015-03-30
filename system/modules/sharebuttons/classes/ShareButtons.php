@@ -85,7 +85,7 @@ class ShareButtons extends \Frontend
             $template = $objArticle['sharebuttons_template'];
             $url = rawurlencode( \Environment::get('url').'/'.$objTemplate->link );
             $title = rawurlencode( $objArticle['headline'] );
-            $description = $objArticle['teaser'];
+            $description = rawurlencode( strip_tags( $objArticle['teaser'] ) );
 
             // create the share buttons
             $objTemplate->sharebuttons = self::createShareButtons( $networks, $theme, $template, $url, $title, $description );
