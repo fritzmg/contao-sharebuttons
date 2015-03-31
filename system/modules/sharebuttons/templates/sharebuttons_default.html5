@@ -21,9 +21,9 @@
 		<li><a class="mail" href="mailto:?subject={{label::sharebuttons:mail_subject}}:%20<?php echo $this->title; ?>&amp;body=<?php echo $this->url; ?>">Mail</a></li>
 		<?php endif; ?>
 		<?php if ($this->tumblr): ?>
-		<li><a class="tumblr" href="http://www.tumblr.com/share?v=3&amp;u=<?php echo $this->url; ?>&amp;t=<?php echo $this->title; ?>&amp;s=" rel="nofollow" title="{{label::sharebuttons:share_on_tumblr}}" onclick="return shd.open(this.href,800,450);">tumblr</a></li>
+		<li><a class="tumblr" href="http://www.tumblr.com/share?v=3&amp;u=<?php echo $this->url; ?>&amp;t=<?php echo $this->title; ?>&amp;s=<?php echo $this->description; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_tumblr}}" onclick="return shd.open(this.href,800,450);">tumblr</a></li>
 		<?php endif; ?>
-		<?php if ($this->pinterest): ?>
+		<?php if ($this->pinterest && $this->image): ?>
 		<li><a class="pinterest" href="http://pinterest.com/pin/create/button/?url=<?php echo $this->url; ?>&amp;media=<?php echo $this->image; ?>&amp;description=<?php echo $this->description; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_pinterest}}" onclick="return shd.open(this.href,460,460);">Pinterest</a></li>
 		<?php endif ;?>
 		<?php if ($this->reddit): ?>
