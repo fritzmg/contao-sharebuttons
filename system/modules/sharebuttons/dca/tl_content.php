@@ -22,57 +22,28 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['sharebuttons'] = '{type_legend},ty
  * Add fields to tl_content
  */
 $GLOBALS['TL_DCA']['tl_content']['fields']['sharebuttons_networks'] = array(
-	'label'                   => &$GLOBALS['TL_LANG']['tl_content']['sharebuttons_networks'],
+	'label'                   => &$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_networks'],
 	'exclude'                 => true,
 	'inputType'               => 'checkbox',
-	'options_callback'		  => array('tl_content_sharebuttons','getNetworks'),
+	'options_callback'		  => array('ShareButtons','getNetworks'),
 	'eval'                    => array('multiple'=>true),
 	'sql'                     => "text NULL"
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['sharebuttons_theme'] = array(
-	'label'                 => &$GLOBALS['TL_LANG']['tl_content']['sharebuttons_theme'],
+	'label'                 => &$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_theme'],
 	'exclude'				=> true,
 	'inputType'				=> 'select',
-	'options_callback'		=> array('tl_content_sharebuttons','getButtonThemes'),
+	'options_callback'		=> array('ShareButtons','getButtonThemes'),
 	'eval'                  => array('tl_class'=>'w50'),
 	'sql'                   => "varchar(32) NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['sharebuttons_template'] = array(
-	'label'                 => &$GLOBALS['TL_LANG']['tl_content']['sharebuttons_template'],
+	'label'                 => &$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_template'],
 	'exclude'				=> true,
 	'inputType'				=> 'select',
-	'options_callback'		=> array('tl_content_sharebuttons','getSharebuttonsTemplates'),
+	'options_callback'		=> array('ShareButtons','getSharebuttonsTemplates'),
 	'eval'                  => array('tl_class'=>'w50'),
 	'sql'                   => "varchar(32) NOT NULL default ''"
 );
-
-
-class tl_content_sharebuttons extends Backend
-{
-	public function getNetworks()
-	{
-		return $GLOBALS['sharebuttons']['networks'];
-	}
-
-	public function getButtonThemes()
-	{
-		$themes = array( '' => $GLOBALS['TL_LANG']['sharebuttons']['no_theme'] );
-		foreach( $GLOBALS['sharebuttons']['themes'] as $k => $v )
-			$themes[$k] = $v[0];
-		return $themes;
-	}
-
-	public function getSharebuttonsTemplates(DataContainer $dc)
-	{
-		$intPid = $dc->activeRecord->pid;
-
-		if (\Input::get('act') == 'overrideAll')
-		{
-			$intPid = \Input::get('id');
-		}
-
-		return $this->getTemplateGroup('sharebuttons_', $intPid);
-	}
-}

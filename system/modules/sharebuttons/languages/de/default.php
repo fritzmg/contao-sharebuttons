@@ -24,3 +24,16 @@ $GLOBALS['TL_LANG']['sharebuttons']['share_on_tumblr'] = "auf tumblr teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_pinterest'] = "auf Pinterest teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_reddit'] = "auf Reddit teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['mail_subject'] = "Website Empfehlung";
+
+$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_legend'] = "Share buttons";
+$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_networks'] = array('Share buttons','Wähle die share buttons aus, die sichtbar sein sollen');
+$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_template'] = array('Template','Template für die Share buttons. Dateiname beginnt mit sharebuttons_');
+$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_theme'] = array('Theme','Wähle ein Theme aus, das für die buttons verwendet wird');
+
+$GLOBALS['TL_LANG']['tl_content']['sharebuttons_legend'] = $GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_legend'];
+$GLOBALS['TL_LANG']['tl_module']['sharebuttons_legend'] = $GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_legend'];
+$GLOBALS['TL_LANG']['tl_news']['sharebuttons_legend'] = $GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_legend'];
+$GLOBALS['TL_LANG']['tl_news_archive']['sharebuttons_legend'] = $GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_legend'];
+
+$GLOBALS['TL_LANG']['CTE']['sharebuttons'] = array('Share buttons', 'Buttons zum teilen von Seitenlinks auf sozialen Netzwerken.');
+$GLOBALS['TL_LANG']['FMD']['sharebuttons'] = $GLOBALS['TL_LANG']['CTE']['sharebuttons'];

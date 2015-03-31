@@ -11,17 +11,11 @@
  * @author    Fritz Michael Gschwantner <fmg@inspiredminds.at>
  * @license   GPL-2.0
  */
+ 
 
+$GLOBALS['TL_DCA']['tl_news_archive']['palettes']['default'] .= ';{sharebuttons_legend},sharebuttons_networks,sharebuttons_theme,sharebuttons_template';
 
-/**
- * Add palettes to tl_module
- */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['sharebuttons'] = '{title_legend},name,headline,type;{sharebuttons_legend},sharebuttons_networks,sharebuttons_theme,sharebuttons_template;{sharebuttons_css_legend},sharebuttons_usecss;{expert_legend},cssID,align,space';
-
-/**
- * Add fields to tl_module
- */
-$GLOBALS['TL_DCA']['tl_module']['fields']['sharebuttons_networks'] = array(
+$GLOBALS['TL_DCA']['tl_news_archive']['fields']['sharebuttons_networks'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_networks'],
 	'exclude'                 => true,
 	'inputType'               => 'checkbox',
@@ -30,7 +24,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['sharebuttons_networks'] = array(
 	'sql'                     => "text NULL"
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['sharebuttons_theme'] = array(
+$GLOBALS['TL_DCA']['tl_news_archive']['fields']['sharebuttons_theme'] = array(
 	'label'                 => &$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_theme'],
 	'exclude'				=> true,
 	'inputType'				=> 'select',
@@ -39,7 +33,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['sharebuttons_theme'] = array(
 	'sql'                   => "varchar(32) NOT NULL default ''"
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['sharebuttons_template'] = array(
+$GLOBALS['TL_DCA']['tl_news_archive']['fields']['sharebuttons_template'] = array(
 	'label'                 => &$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_template'],
 	'exclude'				=> true,
 	'inputType'				=> 'select',

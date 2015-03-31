@@ -20,6 +20,7 @@ ClassLoader::addClasses(array
 (
 	'ModuleShareButtons'  => 'system/modules/sharebuttons/modules/ModuleShareButtons.php',
 	'ShareButtons'        => 'system/modules/sharebuttons/classes/ShareButtons.php',
+	'ShareButtonsInit'    => 'system/modules/sharebuttons/classes/ShareButtonsInit.php',
 	'ContentShareButtons' => 'system/modules/sharebuttons/elements/ContentShareButtons.php'
 ));
 
