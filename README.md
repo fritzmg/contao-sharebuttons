@@ -58,6 +58,26 @@ Have a look at the `$GLOBALS['sharebuttons']['themes']` and `$GLOBALS['sharebutt
 
 Using the share buttons in news articles this way is especially important, if you want to show share buttons in a news list — otherwise the url and title will not be correct (since the share buttons just use the url and title of the current page otherwise). 
 
+## Insert Tag
+
+Since version 1.1.0 there is also an insert tag available. The name of the insert tag is `sharebuttons`, the first parameter is the theme and the following parameter are the networks separated by a single colon:
+
+```
+{{sharebuttons::THEME::NETWORK:NETWORK:...}}
+```
+
+The following insert tag would create share buttons with the `boxxed` theme with all currently available social networks:
+
+```
+{{sharebuttons::boxxed::facebook:twitter:gplus:linkedin:xing:mail:tumblr:pinterest:reddit}}
+```
+
+The theme parameter is optional. The following insert tag would simply generate the HTML source for a Facebook, Twitter and Google+ share button, without including a stylesheet for a theme:
+
+```
+{{sharebuttons::facebook:twitter:gplus}}
+```
+
 ## Attributions
 
 ### Icon sources

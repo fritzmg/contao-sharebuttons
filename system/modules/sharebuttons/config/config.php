@@ -29,6 +29,7 @@ $GLOBALS['TL_CTE']['links']['sharebuttons'] = 'ContentShareButtons';
  * Hooks
  */
 $GLOBALS['TL_HOOKS']['initializeSystem'][] = array('ShareButtonsInit','insertParseArticlesHook');
+$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('ShareButtons','replaceInsertTags');
 
 
 /**
