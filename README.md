@@ -38,25 +38,15 @@ You can also set the template in each element, if you happen to need a different
 
 ## News
 
-In order to use the share buttons in your news articles, you need to add the following to your news template:
+You can output share buttons directly in your news templates:
 
 ```php
 <?php echo $this->sharebuttons; ?>
 ```
 
-And you need to enable the share buttons and set the optional theme _for each news entry_. If you use the share buttons in news this way, it may be useful to define a default value for the selected search buttons (and may be theme). You can do this via the `dcaconfig.php` like so:
+You can set the options for the news sharebuttons either in the news archive or in each news entry currently. The selected social networks will be merged, while the other settings are prioritized for the news entry, whenever specified.
 
-```php
-// this pre-selects the Facebook, Twitter and Google+ share button
-$GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_networks']['default'] = array('facebook','twitter','gplus');
-
-// this pre-selects the "Boxxed" theme
-$GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_theme']['default'] = 'boxxed';
-```
-
-Have a look at the `$GLOBALS['sharebuttons']['themes']` and `$GLOBALS['sharebuttons']['networks']` array in [`config/config.php`](https://github.com/fritzmg/contao-sharebuttons/blob/master/system/modules/sharebuttons/config/config.php) in order to find the key-string for your desired networks and theme.
-
-Using the share buttons in news articles this way is especially important, if you want to show share buttons in a news list — otherwise the url and title will not be correct (since the share buttons just use the url and title of the current page otherwise). 
+Using the share buttons in news articles this way is especially important, if you want to show share buttons in a news list — otherwise the url and title will not be correct (since the share buttons just use the url and title of the current page otherwise).
 
 ## Insert Tag
 
@@ -77,6 +67,8 @@ The theme parameter is optional. The following insert tag would simply generate 
 ```
 {{sharebuttons::facebook:twitter:gplus}}
 ```
+
+Have a look at the `$GLOBALS['sharebuttons']['themes']` and `$GLOBALS['sharebuttons']['networks']` array in [`config/config.php`](https://github.com/fritzmg/contao-sharebuttons/blob/master/system/modules/sharebuttons/config/config.php) in order to find the key-string for your desired networks and theme.
 
 ## Attributions
 
