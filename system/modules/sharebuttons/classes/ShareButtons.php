@@ -28,9 +28,13 @@ class ShareButtons extends \Frontend
         if( !is_array( $networks ) || count( $networks ) == 0 )
             return '';
 
-        // backwards compatibility
-        if( $theme == 'sharebuttons_none' || $theme == 'none' )
+        // process theme
+        if( $theme == 'sharebuttons_none' || $theme == 'none' || !in_array( $theme, array_keys( $GLOBALS['sharebuttons']['themes'] ) ) )
             $theme = '';
+
+        // force theme to fontawesome if fontawesome template is used
+        if( stripos( $template, 'fontawesome' ) !== false && $theme !== '' && $theme !== 'text' )
+            $theme = 'fontawesome';
 
         // create share buttons template
         $objButtonsTemplate = new FrontendTemplate( $template );

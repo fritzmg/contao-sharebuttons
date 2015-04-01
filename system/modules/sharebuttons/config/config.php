@@ -63,5 +63,6 @@ $GLOBALS['sharebuttons']['themes'] = array(
 	'shadow'            => array('Shadow'            ,'system/modules/sharebuttons/assets/shadow/shadow.css'),
 	'simpleflat'        => array('Simple Flat'       ,'system/modules/sharebuttons/assets/simpleflat/simpleflat.css'),
 	'simpleicons_black' => array('Simple Icons Black','system/modules/sharebuttons/assets/simpleicons/simpleicons_black.css'),
-	'simpleicons_white' => array('Simple Icons White','system/modules/sharebuttons/assets/simpleicons/simpleicons_white.css')
+	'simpleicons_white' => array('Simple Icons White','system/modules/sharebuttons/assets/simpleicons/simpleicons_white.css'),
+	'fontawesome'       => array('Font Awesome'      ,'system/modules/sharebuttons/assets/fontawesome.css')
 );

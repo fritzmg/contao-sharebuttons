@@ -1,0 +1,34 @@
+
+<!-- indexer::stop -->
+<div class="sharebuttons">
+	<ul<?php if( $this->theme ): ?> class="theme <?php echo $this->theme; ?>"<?php endif; ?>>
+		<?php if ($this->facebook): ?>
+		<li><a class="facebook fa fa-facebook" href="share/index.php?p=facebook&amp;u=<?php echo $this->url; ?>&amp;t=<?php echo $this->title; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_facebook}}" onclick="return shd.open(this.href,600,300);"></a></li>
+		<?php endif; ?>
+		<?php if ($this->twitter): ?>
+		<li><a class="twitter fa fa-twitter" href="share/index.php?p=twitter&amp;u=<?php echo $this->url; ?>&amp;t=<?php echo $this->title; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_twitter}}" onclick="return shd.open(this.href,500,260);"></a></li>
+		<?php endif; ?>
+		<?php if ($this->gplus): ?>
+		<li><a class="gplus fa fa-google-plus" href="https://plus.google.com/share?url=<?php echo $this->url; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_gplus}}" onclick="return shd.open(this.href,520,450);"></a></li>
+		<?php endif; ?>
+		<?php if ($this->linkedin): ?>
+		<li><a class="linkedin fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $this->url; ?>&amp;title=><?php echo $this->title; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_linkedin}}" onclick="return shd.open(this.href,520,570);"></a></li>
+		<?php endif; ?>
+		<?php if ($this->xing): ?>
+		<li><a class="xing fa fa-xing" href="https://www.xing.com/social_plugins/share/new?sc_p=xing-share&amp;h=1&amp;url=<?php echo $this->url; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_xing}}" onclick="return shd.open(this.href,460,460);"></a></li>
+		<?php endif; ?>
+		<?php if ($this->mail): ?>
+		<li><a class="mail fa fa-envelope" href="mailto:?subject={{label::sharebuttons:mail_subject}}:%20<?php echo $this->title; ?>&amp;body=<?php echo $this->url; ?>"></a></li>
+		<?php endif; ?>
+		<?php if ($this->tumblr): ?>
+		<li><a class="tumblr fa fa-tumblr" href="http://www.tumblr.com/share?v=3&amp;u=<?php echo $this->url; ?>&amp;t=<?php echo $this->title; ?>&amp;s=<?php echo $this->description; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_tumblr}}" onclick="return shd.open(this.href,800,450);"></a></li>
+		<?php endif; ?>
+		<?php if ($this->pinterest && $this->image): ?>
+		<li><a class="pinterest fa fa-pinterest" href="http://pinterest.com/pin/create/button/?url=<?php echo $this->url; ?>&amp;media=<?php echo $this->image; ?>&amp;description=<?php echo $this->description; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_pinterest}}" onclick="return shd.open(this.href,460,460);"></a></li>
+		<?php endif ;?>
+		<?php if ($this->reddit): ?>
+		<li><a class="reddit fa fa-reddit" href="http://www.reddit.com/submit?url=<?php echo $this->url; ?>&amp;title=<?php echo $this->title; ?>" rel="nofollow" title="{{label::sharebuttons:share_on_reddit}}" onclick="return shd.open(this.href,855,900);"></a></li>
+		<?php endif; ?>
+	</ul>
+</div>
+<!-- indexer::continue -->

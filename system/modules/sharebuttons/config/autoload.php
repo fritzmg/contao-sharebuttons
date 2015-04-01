@@ -29,7 +29,8 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-	'mod_sharebuttons'     => 'system/modules/sharebuttons/templates',
-	'sharebuttons_default' => 'system/modules/sharebuttons/templates',
-	'ce_sharebuttons'      => 'system/modules/sharebuttons/templates'
+	'ce_sharebuttons'          => 'system/modules/sharebuttons/templates',
+	'mod_sharebuttons'         => 'system/modules/sharebuttons/templates',
+	'sharebuttons_default'     => 'system/modules/sharebuttons/templates',
+	'sharebuttons_fontawesome' => 'system/modules/sharebuttons/templates'
 ));

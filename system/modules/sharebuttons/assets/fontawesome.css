@@ -1,0 +1,15 @@
+.sharebuttons > ul.fontawesome > li > a {
+	text-indent:0;
+	text-decoration:none;
+	font-size:24px;
+	width:32px;
+	height:32px;
+	line-height:32px;
+	text-align:center;
+	color:#606060;
+	transition:0.4s;
+}
+
+.sharebuttons > ul.fontawesome > li > a:hover {
+	color:#000;
+}
