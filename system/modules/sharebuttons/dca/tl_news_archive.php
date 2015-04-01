@@ -13,8 +13,14 @@
  */
  
 
+/**
+ * Add palettes to tl_news_archive
+ */
 $GLOBALS['TL_DCA']['tl_news_archive']['palettes']['default'] .= ';{sharebuttons_legend},sharebuttons_networks,sharebuttons_theme,sharebuttons_template';
 
+/**
+ * Add fields to tl_news_archive
+ */
 $GLOBALS['TL_DCA']['tl_news_archive']['fields']['sharebuttons_networks'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_networks'],
 	'exclude'                 => true,

@@ -1,9 +1,3 @@
-#pal_sharebuttons_legend:after {
-	clear:both;
-	display:block;
-	content:"";
-}
-
 #pal_sharebuttons_legend .w50 {
 	height:auto;
 }

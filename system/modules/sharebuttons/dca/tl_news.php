@@ -11,10 +11,16 @@
  * @author    Fritz Michael Gschwantner <fmg@inspiredminds.at>
  * @license   GPL-2.0
  */
- 
 
+ 
+/**
+ * Add palettes to tl_news
+ */
 $GLOBALS['TL_DCA']['tl_news']['palettes']['default'] = str_replace('{publish_legend}','{sharebuttons_legend},sharebuttons_networks,sharebuttons_theme,sharebuttons_template;{publish_legend}',$GLOBALS['TL_DCA']['tl_news']['palettes']['default']);
 
+/**
+ * Add fields to tl_news
+ */
 $GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_networks'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_networks'],
 	'exclude'                 => true,
