@@ -35,6 +35,9 @@ class ShareButtons extends \Frontend
         // force theme to fontawesome if fontawesome template is used
         if( stripos( $template, 'fontawesome' ) !== false && $theme !== '' && $theme !== 'text' )
             $theme = 'fontawesome';
+        // force template to fontawesome if fontawesome theme is used
+        elseif( $theme == 'fontawesome' )
+            $template = 'sharebuttons_fontawesome';
 
         // create share buttons template
         $objButtonsTemplate = new FrontendTemplate( $template );
