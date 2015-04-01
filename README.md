@@ -21,6 +21,7 @@ From top to bottom:
 - Simple Flat
 - Simple Icons Black
 - Simple Icons White (grey background added for visibility)
+- Font Awesome
 
 The "Contao" theme uses Contao's own icons, however only Facebook, Twitter and Google+ is available there. There is also a theme called "Text", which simply aligns the elements horizontally, but leaves the textual content of each button visible.
 
