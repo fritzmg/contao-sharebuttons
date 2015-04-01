@@ -17,14 +17,11 @@
 	background-image:url('../../../../assets/contao/images/gplus.gif');
 }
 
-.sharebuttons > ul.contao > li > a.linkedin {
-	text-indent:0;
-}
-
-.sharebuttons > ul.contao > li > a.xing {
-	text-indent:0;
-}
-
-.sharebuttons > ul.contao > li > a.mail {
+.sharebuttons > ul.contao > li > a.linkedin,
+.sharebuttons > ul.contao > li > a.xing,
+.sharebuttons > ul.contao > li > a.mail,
+.sharebuttons > ul.contao > li > a.tumblr,
+.sharebuttons > ul.contao > li > a.pinterest,
+.sharebuttons > ul.contao > li > a.reddit {
 	text-indent:0;
 }
