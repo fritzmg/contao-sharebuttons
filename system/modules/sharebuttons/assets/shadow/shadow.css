@@ -30,11 +30,16 @@
 	background-position:-200px 0;
 }
 
-.sharebuttons > ul.shadow > li > a.tumblr,
-.sharebuttons > ul.shadow > li > a.pinterest,
+.sharebuttons > ul.shadow > li > a.tumblr {
+	background-position:-240px 0;
+}
+
+.sharebuttons > ul.shadow > li > a.pinterest {
+	background-position:-280px 0;
+}
+
 .sharebuttons > ul.shadow > li > a.reddit {
-	text-indent:0;
-	background-image:none;
+	background-position:-320px 0;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
