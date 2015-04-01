@@ -107,9 +107,10 @@ class ShareButtons extends \Frontend
             $url         = \Environment::get('base') . $objTemplate->link;
             $title       = $arrData['headline'];
             $description = $arrData['teaser'];
+            $image       = \Environment::get('base') . $objTemplate->singleSRC;
 
             // create the share buttons
-            $objTemplate->sharebuttons = self::createShareButtons( $networks, $theme, $template, $url, $title, $description );
+            $objTemplate->sharebuttons = self::createShareButtons( $networks, $theme, $template, $url, $title, $description, $image );
         }
     }
 

@@ -22,7 +22,7 @@ From top to bottom:
 - Simple Icons Black
 - Simple Icons White (grey background added for visibility)
 
-The "Contao" theme uses Contao's own icons, however only Facebook, Twitter and Google+ is available there.  There is also a theme called "Text", which simply aligns the elements horizontally, but leaves the textual content of each button visible.
+The "Contao" theme uses Contao's own icons, however only Facebook, Twitter and Google+ is available there. There is also a theme called "Text", which simply aligns the elements horizontally, but leaves the textual content of each button visible.
 
 The following themes offer higher resolution images for devices with high DPI:
 
