@@ -26,7 +26,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sharebuttons_networks'] = array(
 	'exclude'                 => true,
 	'inputType'               => 'checkbox',
 	'options_callback'		  => array('ShareButtons','getNetworks'),
-	'eval'                    => array('multiple'=>true),
+	'eval'                    => array('multiple'=>true,'tl_class'=>'w50'),
 	'sql'                     => "text NULL"
 );
 

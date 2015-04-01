@@ -33,6 +33,13 @@ $GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('ShareButtons','replaceInser
 
 
 /**
+ * CSS
+ */
+if( TL_MODE == 'BE' )
+	$GLOBALS['TL_CSS'][] = 'system/modules/sharebuttons/assets/backend.css';
+
+
+/**
  * Custom settings
  */
 $GLOBALS['sharebuttons']['networks'] = array(
