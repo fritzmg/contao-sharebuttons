@@ -41,7 +41,7 @@ You can also set the template in each element, if you happen to need a different
 
 Since version 1.1.0 there is also a theme and template for Font Awesome icons. If you have the Font Awesome icon font integrated on your page and want to use it for your share buttons, simply select the `sharebuttons_fontawesome` template. Theme wise you can choose between _None_, _Text_ and _Font Awesome_. The latter one comes with some styles that will make the icons about as big as the other themes. If you select any theme other than those three and you have the template selected, it will default to the _Font Awesome_ theme currently.
 
-If you want to exchange the icons for one of the buttons simply create your own `sharebuttons_fontawesome` template (or rename it to something else) and replace the `fa-` class. For example, if you want the square version of the facebook icons, simply replace `fa-facebook` with `fa-facebook-square`.
+If you want to exchange the icons for one of the buttons simply create your own `sharebuttons_fontawesome` template (or rename it to something else) and replace the `fa-` class. For example, if you want the square version of the facebook icon, simply replace `fa-facebook` with `fa-facebook-square`.
 
 ## News
 
