@@ -28,7 +28,7 @@ class ShareButtons extends \Frontend
         if( !is_array( $networks ) || count( $networks ) == 0 )
             return '';
 
-        // process theme
+        // backwards compatibility
         if( $theme == 'sharebuttons_none' || $theme == 'none' )
             $theme = '';
 
@@ -53,27 +53,14 @@ class ShareButtons extends \Frontend
         // insert CSS if necessary
         if( $theme )
         {
-            $css_base  = 'system/modules/sharebuttons/assets/base.css';
+            $GLOBALS['TL_CSS'][] ='system/modules/sharebuttons/assets/base.css||static';
             $css_theme = $GLOBALS['sharebuttons']['themes'][ $theme ][1];
-
-            if( !is_array( $GLOBALS['TL_CSS'] ) )
-                $GLOBALS['TL_CSS'] = array();
-
-            if( !in_array( $css_base, $GLOBALS['TL_CSS'] ) )
-                $GLOBALS['TL_CSS'][] = $css_base.'||static';
-
-            if( !in_array( $css_theme, $GLOBALS['TL_CSS'] ) && is_file( TL_ROOT . '/' . $css_theme ) )
+            if( is_file( TL_ROOT . '/' . $css_theme ) )
                 $GLOBALS['TL_CSS'][] = $css_theme.'||static';
         }
 
         // insert javascript
-        $js = 'system/modules/sharebuttons/assets/scripts.js|static';
-
-        if( !is_array( $GLOBALS['TL_JAVASCRIPT'] ) )
-            $GLOBALS['TL_JAVASCRIPT'] = array();
-
-        if( !in_array( $js, $GLOBALS['TL_JAVASCRIPT'] ) )
-            $GLOBALS['TL_JAVASCRIPT'][] = $js;
+        $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/sharebuttons/assets/scripts.js|static';
 
         // return parsed template
         return $objButtonsTemplate->parse();
@@ -97,6 +84,9 @@ class ShareButtons extends \Frontend
         else
             $networksMerged = is_array( $networksArchive ) ? $networksArchive : ( is_array( $networksArticle ) ? $networksArticle : array() );
 
+        // prepare sharebuttons string
+        $strSharebuttons = '';
+
         // check if there are any networks
         if( count( $networksMerged ) > 0 )
         {
@@ -110,8 +100,11 @@ class ShareButtons extends \Frontend
             $image       = \Environment::get('base') . $objTemplate->singleSRC;
 
             // create the share buttons
-            $objTemplate->sharebuttons = self::createShareButtons( $networks, $theme, $template, $url, $title, $description, $image );
+            $strSharebuttons = self::createShareButtons( $networks, $theme, $template, $url, $title, $description, $image );
         }
+
+        // set sharebuttons string
+        $objTemplate->sharebuttons = $strSharebuttons;
     }
 
     public function replaceInsertTags( $strTag, $blnCache = false )
