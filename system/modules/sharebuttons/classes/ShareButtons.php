@@ -73,7 +73,7 @@ class ShareButtons extends \Frontend
         return $objButtonsTemplate->parse();
     }
 
-    public function parseArticles($objTemplate, $arrData, $news)
+    public function parseArticles( $objTemplate, $arrData, $objModule )
     {
         // get the news archive
         $objArchive = \NewsArchiveModel::findById( $arrData['pid'] );
@@ -104,7 +104,7 @@ class ShareButtons extends \Frontend
             $url         = \Environment::get('base') . $objTemplate->link;
             $title       = $arrData['headline'];
             $description = $arrData['teaser'];
-            $image       = \Environment::get('base') . $objTemplate->singleSRC;
+            $image       = ( $objTemplate->addImage && $objTemplate->singleSRC ) ? \Environment::get('base') . $objTemplate->singleSRC : null;
 
             // create the share buttons
             $strSharebuttons = self::createShareButtons( $networks, $theme, $template, $url, $title, $description, $image );
