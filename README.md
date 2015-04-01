@@ -29,8 +29,11 @@ The following themes offer higher resolution images for devices with high DPI:
 - Boxxed (16px)
 - Light
 - Shadow
+- Simple Flat
 - Simple Icons Black 
 - Simple Icons White
+
+Since version 1.1.0 there is also a theme and template for Font Awesome icons. If you have the Font Awesome icon font integrated on your page and want to use it for your share buttons, simply select the `sharebuttons_fontawesome` template. Theme wise you can choose between _None_, _Text_ and _Font Awesome_. The latter one comes with some styles that will make the icons
 
 ## Template
 
