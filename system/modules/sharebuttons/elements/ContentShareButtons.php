@@ -26,8 +26,15 @@ class ContentShareButtons extends \ContentElement
      */
     protected function compile()
     {
-        $this->Template->sharebuttons = ShareButtons::createShareButtons( $this->sharebuttons_networks, 
-                                                                          $this->sharebuttons_theme, 
-                                                                          $this->sharebuttons_template );
+        // show share buttons in backend
+        if( TL_MODE == 'BE' )
+            $this->Template->sharebuttons = ShareButtons::createShareButtons( $this->sharebuttons_networks, 
+                                                                              $this->sharebuttons_theme, 
+                                                                              $this->sharebuttons_template );
+        // otherwise generate insert tag
+        else
+            $this->Template->sharebuttons = ShareButtons::createInsertTag( $this->sharebuttons_networks, 
+                                                                           $this->sharebuttons_theme, 
+                                                                           $this->sharebuttons_template );
     }
 }

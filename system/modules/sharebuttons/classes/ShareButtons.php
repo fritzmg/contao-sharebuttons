@@ -15,7 +15,10 @@
 
 class ShareButtons extends \Frontend
 {
-    public static function createShareButtons( $networks, $theme = '', $template = 'sharebuttons_default', $url = null, $title = null, $description = null, $image = null )
+    const DEFAULT_THEME = '';
+    const DEFAULT_TEMPLATE = 'sharebuttons_default';
+
+    public static function createShareButtons( $networks, $theme = self::DEFAULT_THEME, $template = self::DEFAULT_TEMPLATE, $url = null, $title = null, $description = null, $image = null )
     {
         // access to page
         global $objPage;
@@ -73,6 +76,26 @@ class ShareButtons extends \Frontend
         return $objButtonsTemplate->parse();
     }
 
+    public static function createInsertTag( $networks, $theme = '', $template = '' )
+    {
+        // try to deserialize
+        if( is_string( $networks ) )
+            $networks = deserialize( $networks );
+
+        // check for networks
+        if( !is_array( $networks ) || count( $networks ) == 0 )
+            return '';
+
+        // build insert tag
+        $strInsertTag = '{{sharebuttons';
+        if( $theme ) $strInsertTag.= '::'.$theme;
+        if( $template ) $strInsertTag.= '::'.$template;
+        $strInsertTag.= '::'.implode(':', $networks).'}}';
+
+        // return insert tag
+        return $strInsertTag;
+    }
+
     public function parseArticles( $objTemplate, $arrData, $objModule )
     {
         // get the news archive
@@ -122,28 +145,41 @@ class ShareButtons extends \Frontend
         // check for share button tag
         if( $arrTag[0] !== 'sharebuttons' )
             return false;
+        else
+            array_shift( $arrTag );
 
-        // check for parameters
-        if( count( $arrTag ) <= 1 )
-            return '';
-
-        // determine theme
-        $theme = '';
-        if( in_array( $arrTag[1], array_keys( $GLOBALS['sharebuttons']['themes'] ) ) )
-            $theme = $arrTag[1];
-
-        // now get the networks
+        // determine theme, networks and template
         $networks = array();
-        if( count( $arrTag ) == 2 )
-            $networks = explode( ':', $arrTag[1] );
-        elseif( count( $arrTag ) == 3 )
-            $networks = explode( ':', $arrTag[2] );
+        $theme = self::DEFAULT_THEME;
+        $template = self::DEFAULT_TEMPLATE;
 
-        // validate networks
-        $networks = array_intersect( $networks, array_keys( $GLOBALS['sharebuttons']['networks'] ) );
+        // go through each parameter
+        while( count( $arrTag ) > 0 )
+        {
+            // get the parameter
+            $strParam = array_shift( $arrTag );
+
+            // check for theme
+            if( in_array( $strParam, array_keys( $GLOBALS['sharebuttons']['themes'] ) ) )
+            {
+                $theme = $strParam;
+                continue;
+            }
+
+            // check for template
+            if( strpos( $strParam, 'sharebuttons_' ) !== false )
+            {
+                $template = $strParam;
+                continue;
+            }
+
+            // check for networks
+            if( count( $networks ) == 0 )
+                $networks = array_intersect( explode( ':', $strParam ), array_keys( $GLOBALS['sharebuttons']['networks'] ) );
+        }
 
         // create sharebuttons
-        return self::createShareButtons( $networks, $theme );
+        return self::createShareButtons( $networks, $theme, $template );
     }
 
 
