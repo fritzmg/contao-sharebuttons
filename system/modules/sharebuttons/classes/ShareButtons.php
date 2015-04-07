@@ -59,6 +59,7 @@ class ShareButtons extends \Frontend
         $objButtonsTemplate->theme       = $theme;
         $objButtonsTemplate->image       = rawurlencode( $image );
         $objButtonsTemplate->description = rawurlencode( strip_tags( $description ?: $objPage->description ) );
+        $objButtonsTemplate->lang        = $GLOBALS['TL_LANG']['sharebuttons'];
 
         // insert CSS if necessary
         if( $theme )
