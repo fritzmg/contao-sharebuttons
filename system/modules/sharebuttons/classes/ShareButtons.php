@@ -138,7 +138,7 @@ class ShareButtons extends \Frontend
         $objTemplate->sharebuttons = $strSharebuttons;
     }
 
-    public function replaceInsertTags( $strTag, $blnCache = false )
+    public function replaceInsertTag( $strTag, $blnCache = false )
     {
         // split tag
         $arrTag = explode( '::', $strTag );
