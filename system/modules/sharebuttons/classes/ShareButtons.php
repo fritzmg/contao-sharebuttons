@@ -43,7 +43,7 @@ class ShareButtons extends \Frontend
             $template = 'sharebuttons_fontawesome';
 
         // create share buttons template
-        $objButtonsTemplate = new FrontendTemplate( $template );
+        $objButtonsTemplate = new \FrontendTemplate( $template );
 
         // assign enabled networks to template
         foreach( $networks as $network )
