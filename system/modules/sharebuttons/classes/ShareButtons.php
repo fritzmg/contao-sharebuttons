@@ -125,7 +125,7 @@ class ShareButtons extends \Frontend
             $networks    = $networksMerged;
             $theme       = $arrData['sharebuttons_theme'] ?: $objArchive->sharebuttons_theme;
             $template    = ( $arrData['sharebuttons_template'] && $arrData['sharebuttons_template'] != 'sharebuttons_default' ) ? $arrData['sharebuttons_template'] : $objArchive->sharebuttons_template;
-            $url         = \Environment::get('base') . $objTemplate->link;
+            $url         = ( $arrData['source'] != 'external' ? \Environment::get('base') : '' ) . $objTemplate->link;
             $title       = $arrData['headline'];
             $description = $arrData['teaser'];
             $image       = ( $objTemplate->addImage && $objTemplate->singleSRC ) ? \Environment::get('base') . $objTemplate->singleSRC : null;
