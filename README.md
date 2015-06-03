@@ -78,6 +78,14 @@ The theme parameter is optional. The following insert tag would simply generate 
 
 Have a look at the `$GLOBALS['sharebuttons']['themes']` and `$GLOBALS['sharebuttons']['networks']` array in [`config/config.php`](https://github.com/fritzmg/contao-sharebuttons/blob/master/system/modules/sharebuttons/config/config.php) in order to find the key-string for your desired networks and theme.
 
+## Pinterest button
+
+The Pinterest share button will only be displayed, if an image is available. There are 3 ways an image can be present:
+
+* If you use the sharebuttons in your news template via `<?php echo $this->sharebuttons; ?>`, the Pinterest button will automatically use the news teaser image.
+* Simply install the [social_images](https://github.com/codefog/contao-social_images) extension (also available in the [ER2](https://contao.org/de/extension-list/view/social_images.en.html)) and enable it in your layout. The Pinterest share button will automatically take the first social image available.
+* You can also manually set a social image by providing an absolute URL to the image in `$GLOBALS['SOCIAL_IMAGES'][0]` in any template or PHP script _before_ the sharebuttons are generated.
+
 ## Attributions
 
 ### Icon sources
