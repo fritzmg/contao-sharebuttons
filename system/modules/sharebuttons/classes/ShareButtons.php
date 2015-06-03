@@ -42,6 +42,10 @@ class ShareButtons extends \Frontend
         elseif( $theme == 'fontawesome' )
             $template = 'sharebuttons_fontawesome';
 
+        // check for empty template
+        if( empty( $template ) )
+            $template = self::DEFAULT_TEMPLATE;
+
         // create share buttons template
         $objButtonsTemplate = new \FrontendTemplate( $template );
 
