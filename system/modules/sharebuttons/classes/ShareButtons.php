@@ -43,8 +43,7 @@ class ShareButtons extends \Frontend
             $template = 'sharebuttons_fontawesome';
 
         // check for empty template
-        if( empty( $template ) )
-            $template = self::DEFAULT_TEMPLATE;
+        $template = $template ?: self::DEFAULT_TEMPLATE;
 
         // create share buttons template
         $objButtonsTemplate = new \FrontendTemplate( $template );
@@ -64,6 +63,7 @@ class ShareButtons extends \Frontend
         $objButtonsTemplate->image       = rawurlencode( $image );
         $objButtonsTemplate->description = rawurlencode( strip_tags( $description ?: $objPage->description ) );
         $objButtonsTemplate->lang        = $GLOBALS['TL_LANG']['sharebuttons'];
+        $objButtonsTemplate->lang['mail_subject'] = rawurlencode( $GLOBALS['TL_LANG']['sharebuttons']['mail_subject'] );
 
         // insert CSS if necessary
         if( $theme )
