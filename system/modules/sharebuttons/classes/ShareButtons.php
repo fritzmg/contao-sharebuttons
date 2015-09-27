@@ -63,8 +63,11 @@ class ShareButtons extends \Frontend
         $objButtonsTemplate->theme       = $theme;
         $objButtonsTemplate->image       = rawurlencode( $image );
         $objButtonsTemplate->description = rawurlencode( strip_tags( $description ?: $objPage->description ) );
-        $objButtonsTemplate->lang        = $GLOBALS['TL_LANG']['sharebuttons'];
-        $objButtonsTemplate->lang['mail_subject'] = rawurlencode( $GLOBALS['TL_LANG']['sharebuttons']['mail_subject'] );
+
+        // add translations to template
+        $translations = $GLOBALS['TL_LANG']['sharebuttons'];
+        $translations['mail_subject'] = rawurlencode( $translations['mail_subject'] );
+        $objButtonsTemplate->lang = $translations;
 
         // insert CSS if necessary
         if( $theme )
