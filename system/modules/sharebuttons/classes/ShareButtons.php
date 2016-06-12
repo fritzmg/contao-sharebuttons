@@ -107,6 +107,10 @@ class ShareButtons extends \Frontend
 
     public function parseArticles( $objTemplate, $arrData, $objModule )
     {
+        // check for news module
+        if( strpos( get_class($objModule), 'ModuleNews') === false )
+            return;
+
         // get the news archive
         $objArchive = \NewsArchiveModel::findById( $arrData['pid'] );
 
