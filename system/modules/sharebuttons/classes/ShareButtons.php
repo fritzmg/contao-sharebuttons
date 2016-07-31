@@ -13,7 +13,7 @@
  */
 
 
-class ShareButtons extends \Frontend
+class ShareButtons
 {
     const DEFAULT_THEME = '';
     const DEFAULT_TEMPLATE = 'sharebuttons_default';
@@ -56,6 +56,10 @@ class ShareButtons extends \Frontend
         // determine the share image (e.g. for pinterest)
         if( !$image && isset( $GLOBALS['SOCIAL_IMAGES'] ) && is_array( $GLOBALS['SOCIAL_IMAGES'] ) && count( $GLOBALS['SOCIAL_IMAGES'] ) > 0 )
             $image = \Environment::get('base') . $GLOBALS['SOCIAL_IMAGES'][0];
+
+        // process url
+        if( $url && stripos( $url, 'http' ) !== 0 )
+            $url = \Environment::get('base') . $url;
 
         // assign url, title, theme, image, description to template
         $objButtonsTemplate->url         = rawurlencode( $url ?: \Environment::get('base') . \Environment::get('request') );
@@ -105,7 +109,15 @@ class ShareButtons extends \Frontend
         return $strInsertTag;
     }
 
-    public function parseArticles( $objTemplate, $arrData, $objModule )
+
+    /**
+     * parseArticles hook for news
+     *
+     * @param \Template $objTemplate
+     * @param array $arrData
+     * @param \Module $objModule
+     */
+    public function parseArticles( \Template $objTemplate, $arrData, \Module $objModule )
     {
         // check for news module
         if( strpos( get_class($objModule), 'ModuleNews') === false )
@@ -150,6 +162,85 @@ class ShareButtons extends \Frontend
         $objTemplate->sharebuttons = $strSharebuttons;
     }
 
+
+    /**
+     * parseTemplate hook for articles and events
+     *
+     * @param \Template $objTempalte
+     */
+    public function parseTemplate( \Template $objTemplate )
+    {
+        // check for mod_article template
+        if( stripos( $objTemplate->getName(), 'mod_article' ) !== false )
+        {
+            // prepare sharebuttons string
+            $strSharebuttons = '';
+
+            // get the networks
+            $arrNetworks = deserialize( $objTemplate->sharebuttons_networks );
+
+            // check if there are any networks
+            if( $arrNetworks )
+            {
+                // set data
+                $networks    = $arrNetworks;
+                $theme       = $objTemplate->sharebuttons_theme;
+                $template    = $objTemplate->sharebuttons_template;
+                $url         = $objTemplate->href;
+                $title       = $objTemplate->title;
+                $description = $objTemplate->teaser;
+
+                // create the share buttons
+                $strSharebuttons = self::createShareButtons( $networks, $theme, $template, $url, $title, $description );                
+            }
+
+            // set sharebuttons variable
+            $objTemplate->sharebuttons = $strSharebuttons;
+        }
+        // check for event template
+        elseif( stripos( $objTemplate->getName(), 'event_' ) === 0 )
+        {
+            // prepare sharebuttons string
+            $strSharebuttons = '';
+
+            // get the calendar
+            if( ( $objCalendar = \CalendarModel::findById( $objTemplate->pid ) ) !== null )
+            {
+                // get the networks
+                $arrNetworks = deserialize( $objCalendar->sharebuttons_networks );
+
+                // check if there are any networks
+                if( $arrNetworks )
+                {
+                    // set data
+                    $networks    = $arrNetworks;
+                    $theme       = $objCalendar->sharebuttons_theme;
+                    $template    = $objCalendar->sharebuttons_template;
+                    $url         = $objTemplate->href;
+                    $title       = $objTemplate->title;
+                    $description = $objTemplate->teaser;
+                    $image       = $objTemplate->singleSRC;
+
+                    // create the share buttons
+                    $strSharebuttons = self::createShareButtons( $networks, $theme, $template, $url, $title, $description, $image );                
+                }
+
+            }
+
+            // set sharebuttons variable
+            $objTemplate->sharebuttons = $strSharebuttons;            
+        }
+    }
+
+
+    /**
+     * replaceInsertTag hook
+     *
+     * @param string $strTag
+     * @param bool $blnCache
+     *
+     * @return string
+     */
     public function replaceInsertTag( $strTag, $blnCache = false )
     {
         // split tag
@@ -219,6 +310,6 @@ class ShareButtons extends \Frontend
             $intPid = \Input::get('id');
         }
 
-        return $this->getTemplateGroup('sharebuttons_', $intPid);
+        return \Controller::getTemplateGroup('sharebuttons_', $intPid);
     }
 }

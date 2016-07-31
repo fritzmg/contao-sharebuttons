@@ -34,6 +34,8 @@ $GLOBALS['TL_LANG']['tl_content']['sharebuttons_legend'] = $GLOBALS['TL_LANG']['
 $GLOBALS['TL_LANG']['tl_module']['sharebuttons_legend'] = $GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_legend'];
 $GLOBALS['TL_LANG']['tl_news']['sharebuttons_legend'] = $GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_legend'];
 $GLOBALS['TL_LANG']['tl_news_archive']['sharebuttons_legend'] = $GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_legend'];
+$GLOBALS['TL_LANG']['tl_article']['sharebuttons_legend'] = $GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_legend'];
+$GLOBALS['TL_LANG']['tl_calendar']['sharebuttons_legend'] = $GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_legend'];
 
 $GLOBALS['TL_LANG']['CTE']['sharebuttons'] = array('Share buttons', 'Buttons zum teilen von Seitenlinks auf sozialen Netzwerken.');
 $GLOBALS['TL_LANG']['FMD']['sharebuttons'] = $GLOBALS['TL_LANG']['CTE']['sharebuttons'];
