@@ -16,7 +16,7 @@
 /**
  * Change default palette of tl_article
  */
-$GLOBALS['TL_DCA']['tl_article']['palettes']['default'] = str_replace('{syndication_legend},printable;', '{sharebuttons_legend},sharebuttons_networks,sharebuttons_theme,sharebuttons_template;', $GLOBALS['TL_DCA']['tl_article']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_article']['palettes']['default'] = str_replace(',printable;{template', ',printable;{sharebuttons_legend},sharebuttons_networks,sharebuttons_theme,sharebuttons_template;{template', $GLOBALS['TL_DCA']['tl_article']['palettes']['default']);
 
 /**
  * Add fields to tl_article
