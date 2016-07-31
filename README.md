@@ -44,17 +44,17 @@ Since version 1.1.0 there is also a theme and template for Font Awesome icons. I
 
 If you want to exchange the icons for one of the buttons simply create your own `sharebuttons_fontawesome` template (or rename it to something else) and replace the `fa-` class. For example, if you want the square version of the facebook icon, simply replace `fa-facebook` with `fa-facebook-square`.
 
-## News
+## News, Events, Articles
 
-You can output share buttons directly in your news templates:
+You can output share buttons directly in your `news_*`, `event_*` and `mod_article*` templates:
 
 ```php
 <?php echo $this->sharebuttons; ?>
 ```
 
-You can set the options for the news sharebuttons either in the news archive or in each news entry currently. The selected social networks will be merged, while the other settings are prioritized for the news entry, whenever specified.
+You can set the options for the news sharebuttons either in the news archive or in each news entry currently. The selected social networks will be merged, while the other settings are prioritized for the news entry, whenever specified. For articles the options are set in the article's settings. For events the options are set in the calendar only.
 
-Using the share buttons in news articles this way is especially important, if you want to show share buttons in a news list — otherwise the url and title will not be correct (since the share buttons just use the url and title of the current page otherwise).
+Using the share buttons this way is especially important if you want to show share buttons in a news or event list or when you show article teasers — otherwise the url and title will not be correct (since the share buttons just use the url and title of the current page then).
 
 ## Insert Tag
 
