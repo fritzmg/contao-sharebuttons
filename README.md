@@ -49,7 +49,7 @@ If you want to exchange the icons for one of the buttons simply create your own 
 You can output share buttons directly in your `news_*`, `event_*` and `mod_article*` templates:
 
 ```php
-<?php echo $this->sharebuttons; ?>
+<?= $this->sharebuttons ?>
 ```
 
 You can set the options for the news sharebuttons either in the news archive or in each news entry currently. The selected social networks will be merged, while the other settings are prioritized for the news entry, whenever specified. For articles the options are set in the article's settings. For events the options are set in the calendar only.
