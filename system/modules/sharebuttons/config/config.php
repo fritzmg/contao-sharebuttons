@@ -52,7 +52,8 @@ $GLOBALS['sharebuttons']['networks'] = array(
 	'mail' => 'E-Mail',
 	'tumblr' => 'tumblr',
 	'pinterest' => 'Pinterest',
-	'reddit' => 'Reddit'
+	'reddit' => 'Reddit',
+	'whatsapp' => 'WhatsApp'
 );
 
 $GLOBALS['sharebuttons']['themes'] = array(

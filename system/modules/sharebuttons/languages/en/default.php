@@ -23,6 +23,7 @@ $GLOBALS['TL_LANG']['sharebuttons']['share_on_xing'] = "share on Xing";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_tumblr'] = "share on tumblr";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_pinterest'] = "share on Pinterest";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_reddit'] = "share on Reddit";
+$GLOBALS['TL_LANG']['sharebuttons']['share_on_whatsapp'] = "share with Whatsapp";
 $GLOBALS['TL_LANG']['sharebuttons']['mail_subject'] = "Website recommendation";
 
 $GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_legend'] = "Share buttons";

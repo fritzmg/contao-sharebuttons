@@ -22,6 +22,7 @@
 .sharebuttons > ul.contao > li > a.mail,
 .sharebuttons > ul.contao > li > a.tumblr,
 .sharebuttons > ul.contao > li > a.pinterest,
-.sharebuttons > ul.contao > li > a.reddit {
+.sharebuttons > ul.contao > li > a.reddit,
+.sharebuttons > ul.contao > li > a.whatsapp {
 	text-indent:0;
 }

@@ -41,3 +41,7 @@
 .sharebuttons > ul.boxxed > li > a.reddit {
 	background-position:-320px 0;
 }
+
+.sharebuttons > ul.boxxed > li > a.whatsapp {
+	background-position:-360px 0;
+}
