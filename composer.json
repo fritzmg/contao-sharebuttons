@@ -21,8 +21,8 @@
 	},
 	"require":{
 		"php":">=5.2",
-		"contao/core":"~3.0",
-		"contao-community-alliance/composer-installer":"*"
+		"contao/core-bundle":"~3.0 || ~4.2",
+		"contao-community-alliance/composer-plugin":"~2.4 || ~3.0"
 	},
     "replace": {
         "contao-legacy/sharebuttons": "self.version"
