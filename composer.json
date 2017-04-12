@@ -20,7 +20,7 @@
 		"forum":"https://community.contao.org/de"
 	},
 	"require":{
-		"php":">=5.2",
+		"php":">=5.4",
 		"contao/core-bundle":"~3.0 || ~4.2",
 		"contao-community-alliance/composer-plugin":"~2.4 || ~3.0"
 	},
