@@ -1,37 +1,37 @@
 {
-	"name":"fritzmg/contao-sharebuttons",
-	"description":"Simple Contao extension to provide share buttons as a module and content element",
-	"keywords":["contao", "share", "buttons", "social", "facebook", "twitter"],
-	"type":"contao-module",
-	"homepage":"http://www.inspiredminds.at",
-	"license":"GPL-2.0",
-	"authors":[
-		{
-			"name":"Fritz Michael Gschwantner",
-			"homepage":"http://www.inspiredminds.at",
-			"email":"fmg@inspiredminds.at",
-			"role":"Developer"
-		}
-	],
-	"support":{
-		"email":"fmg@inspiredminds.at",
-		"issues":"https://github.com/fritzmg/contao-sharebuttons/issues",
-		"source":"https://github.com/fritzmg/contao-sharebuttons",
-		"forum":"https://community.contao.org/de"
-	},
-	"require":{
-		"php":">=5.4",
-		"contao/core-bundle":"~3.0 || ~4.2",
-		"contao-community-alliance/composer-plugin":"~2.4 || ~3.0"
-	},
+    "name":"fritzmg/contao-sharebuttons",
+    "description":"Simple Contao extension to provide share buttons as a module and content element",
+    "keywords":["contao", "share", "buttons", "social", "facebook", "twitter"],
+    "type":"contao-module",
+    "homepage":"http://www.inspiredminds.at",
+    "license":"GPL-2.0",
+    "authors":[
+        {
+            "name":"Fritz Michael Gschwantner",
+            "homepage":"http://www.inspiredminds.at",
+            "email":"fmg@inspiredminds.at",
+            "role":"Developer"
+        }
+    ],
+    "support":{
+        "email":"fmg@inspiredminds.at",
+        "issues":"https://github.com/fritzmg/contao-sharebuttons/issues",
+        "source":"https://github.com/fritzmg/contao-sharebuttons",
+        "forum":"https://community.contao.org/de"
+    },
+    "require":{
+        "php":">=5.4",
+        "contao/core-bundle":"~3.0 || ~4.2",
+        "contao-community-alliance/composer-plugin":"~2.4 || ~3.0"
+    },
     "replace": {
         "contao-legacy/sharebuttons": "self.version"
     },
-	"extra":{
-		"contao":{
-			"sources":{
-				"system/modules/sharebuttons":"system/modules/sharebuttons"
-			}
-		}
-	}
+    "extra":{
+        "contao":{
+            "sources":{
+                "system/modules/sharebuttons":"system/modules/sharebuttons"
+            }
+        }
+    }
 }
