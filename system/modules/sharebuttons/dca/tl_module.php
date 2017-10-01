@@ -16,7 +16,7 @@
 /**
  * Add palettes to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['sharebuttons'] = '{title_legend},name,headline,type;{sharebuttons_legend},sharebuttons_networks,sharebuttons_theme,sharebuttons_template;{expert_legend},cssID,align,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['sharebuttons'] = '{title_legend},name,headline,type;{sharebuttons_legend},sharebuttons_networks,sharebuttons_theme;{template_legend:hide},sharebuttons_template,customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID';
 
 /**
  * Add fields to tl_module
