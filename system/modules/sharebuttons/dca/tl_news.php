@@ -27,7 +27,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_networks'] = array(
 	'inputType'               => 'checkbox',
 	'options_callback'		  => array('ShareButtons','getNetworks'),
 	'eval'                    => array('multiple'=>true,'tl_class'=>'w50'),
-	'sql'                     => "text NULL"
+	'sql'                     => "blob NULL"
 );
 
 $GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_theme'] = array(
@@ -45,5 +45,5 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['sharebuttons_template'] = array(
 	'inputType'				=> 'select',
 	'options_callback'		=> array('ShareButtons','getSharebuttonsTemplates'),
 	'eval'                  => array('tl_class'=>'w50'),
-	'sql'                   => "varchar(32) NOT NULL default ''"
+	'sql'                   => "varchar(64) NOT NULL default ''"
 );
