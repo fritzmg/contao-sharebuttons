@@ -1,3 +1,7 @@
+[![](https://img.shields.io/maintenance/yes/2017.svg)](https://github.com/fritzmg/contao-sharebuttons)
+[![](https://img.shields.io/packagist/v/fritzmg/contao-sharebuttons.svg)](https://packagist.org/packages/fritzmg/contao-sharebuttons)
+[![](https://img.shields.io/packagist/dt/fritzmg/contao-sharebuttons.svg)](https://packagist.org/packages/fritzmg/contao-sharebuttons)
+
 Contao Share Buttons
 ===================
 
