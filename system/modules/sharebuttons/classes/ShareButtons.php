@@ -50,8 +50,7 @@ class ShareButtons
         $objButtonsTemplate = new \FrontendTemplate( $template );
 
         // assign enabled networks to template
-        foreach( $networks as $network )
-            $objButtonsTemplate->$network = true;
+        $objButtonsTemplate->networks = $networks;
 
         // determine the share image (e.g. for pinterest)
         if( !$image && isset( $GLOBALS['SOCIAL_IMAGES'] ) && is_array( $GLOBALS['SOCIAL_IMAGES'] ) && count( $GLOBALS['SOCIAL_IMAGES'] ) > 0 )

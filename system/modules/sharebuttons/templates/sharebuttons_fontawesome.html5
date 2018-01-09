@@ -1,37 +1,31 @@
 
 <!-- indexer::stop -->
 <div class="sharebuttons">
-	<ul<?php if( $this->theme ): ?> class="theme <?= $this->theme ?>"<?php endif ?>>
-		<?php if ($this->facebook): ?>
-		<li><a class="facebook fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?= $this->url ?>&amp;t=<?= $this->title ?>" rel="nofollow" title="<?= $this->lang['share_on_facebook'] ?>" onclick="return shd.open(this.href,600,300);"></a></li>
-		<?php endif ?>
-		<?php if ($this->twitter): ?>
-		<li><a class="twitter fa fa-twitter" href="https://twitter.com/intent/tweet?url=<?= $this->url ?>&amp;text=<?= $this->title ?>" rel="nofollow" title="<?= $this->lang['share_on_twitter'] ?>" onclick="return shd.open(this.href,500,260);"></a></li>
-		<?php endif ?>
-		<?php if ($this->gplus): ?>
-		<li><a class="gplus fa fa-google-plus" href="https://plus.google.com/share?url=<?= $this->url ?>" rel="nofollow" title="<?= $this->lang['share_on_gplus'] ?>" onclick="return shd.open(this.href,520,450);"></a></li>
-		<?php endif ?>
-		<?php if ($this->linkedin): ?>
-		<li><a class="linkedin fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?= $this->url ?>&amp;title=<?= $this->title ?>" rel="nofollow" title="<?= $this->lang['share_on_linkedin'] ?>" onclick="return shd.open(this.href,520,570);"></a></li>
-		<?php endif ?>
-		<?php if ($this->xing): ?>
-		<li><a class="xing fa fa-xing" href="https://www.xing.com/social_plugins/share/new?sc_p=xing-share&amp;h=1&amp;url=<?= $this->url ?>" rel="nofollow" title="<?= $this->lang['share_on_xing'] ?>" onclick="return shd.open(this.href,460,460);"></a></li>
-		<?php endif ?>
-		<?php if ($this->mail): ?>
-		<li><a class="mail fa fa-envelope" href="mailto:?subject=<?= $this->lang['mail_subject'] ?>:%20<?= $this->title ?>&amp;body=<?= $this->url ?>"></a></li>
-		<?php endif ?>
-		<?php if ($this->tumblr): ?>
-		<li><a class="tumblr fa fa-tumblr" href="http://www.tumblr.com/share?v=3&amp;u=<?= $this->url ?>&amp;t=<?= $this->title ?>&amp;s=<?= $this->description ?>" rel="nofollow" title="<?= $this->lang['share_on_tumblr'] ?>" onclick="return shd.open(this.href,800,450);"></a></li>
-		<?php endif ?>
-		<?php if ($this->pinterest && $this->image): ?>
-		<li><a class="pinterest fa fa-pinterest" href="http://pinterest.com/pin/create/button/?url=<?= $this->url ?>&amp;media=<?= $this->image ?>&amp;description=<?= $this->description ?>" rel="nofollow" title="<?= $this->lang['share_on_pinterest'] ?>" onclick="return shd.open(this.href,460,460);"></a></li>
-		<?php endif ;?>
-		<?php if ($this->reddit): ?>
-		<li><a class="reddit fa fa-reddit" href="http://www.reddit.com/submit?url=<?= $this->url ?>&amp;title=<?= $this->title ?>" rel="nofollow" title="<?= $this->lang['share_on_reddit'] ?>" onclick="return shd.open(this.href,855,900);"></a></li>
-		<?php endif ?>
-		<?php if ($this->whatsapp && \Environment::get('agent')->mobile): ?>
-		<li><a class="whatsapp fa fa-whatsapp" href="whatsapp://send?text=<?= $this->description ? $this->description . '%0A%0A' : '' ?><?= $this->url ?>" data-action="share/whatsapp/share" rel="nofollow" title="<?= $this->lang['share_on_whatsapp'] ?>"></a></li>
-		<?php endif ?>
-	</ul>
+  <ul<?php if ($this->theme): ?> class="theme <?= $this->theme ?>"<?php endif ?>>
+    <?php foreach ($this->networks as $network): ?>
+      <?php if ($network == 'facebook'): ?>
+        <li><a class="facebook fa fa-facebook-official" href="https://www.facebook.com/sharer/sharer.php?u=<?= $this->url ?>&amp;t=<?= $this->title ?>" rel="nofollow" title="<?= $this->lang['share_on_facebook'] ?>" onclick="return shd.open(this.href,600,300);"></a></li>
+      <?php elseif ($network == 'twitter'): ?>
+        <li><a class="twitter fa fa-twitter" href="https://twitter.com/intent/tweet?url=<?= $this->url ?>&amp;text=<?= $this->title ?>" rel="nofollow" title="<?= $this->lang['share_on_twitter'] ?>" onclick="return shd.open(this.href,500,260);"></a></li>
+      <?php elseif ($network == 'gplus'): ?>
+        <li><a class="gplus fa fa-google-plus" href="https://plus.google.com/share?url=<?= $this->url ?>" rel="nofollow" title="<?= $this->lang['share_on_gplus'] ?>" onclick="return shd.open(this.href,520,450);"></a></li>
+      <?php elseif ($network == 'linkedin'): ?>
+        <li><a class="linkedin fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?= $this->url ?>&amp;title=<?= $this->title ?>" rel="nofollow" title="<?= $this->lang['share_on_linkedin'] ?>" onclick="return shd.open(this.href,520,570);"></a></li>
+      <?php elseif ($network == 'xing'): ?>
+        <li><a class="xing fa fa-xing" href="https://www.xing.com/social_plugins/share/new?sc_p=xing-share&amp;h=1&amp;url=<?= $this->url ?>" rel="nofollow" title="<?= $this->lang['share_on_xing'] ?>" onclick="return shd.open(this.href,460,460);"></a></li>
+      <?php elseif ($network == 'mail'): ?>
+        <li><a class="mail fa fa-envelope" href="mailto:?subject=<?= $this->lang['mail_subject'] ?>:%20<?= $this->title ?>&amp;body=<?= $this->url ?>"></a></li>
+      <?php elseif ($network == 'tumblr'): ?>
+        <li><a class="tumblr fa fa-tumblr" href="http://www.tumblr.com/share?v=3&amp;u=<?= $this->url ?>&amp;t=<?= $this->title ?>&amp;s=<?= $this->description ?>" rel="nofollow" title="<?= $this->lang['share_on_tumblr'] ?>" onclick="return shd.open(this.href,800,450);"></a></li>
+      <?php elseif ($network == 'pinterest' && $this->image): ?>
+        <li><a class="pinterest fa fa-pinterest" href="http://pinterest.com/pin/create/button/?url=<?= $this->url ?>&amp;media=<?= $this->image ?>&amp;description=<?= $this->description ?>" rel="nofollow" title="<?= $this->lang['share_on_pinterest'] ?>" onclick="return shd.open(this.href,460,460);"></a></li>
+      <?php endif ;?>
+      <?php if ($network == 'reddit'): ?>
+        <li><a class="reddit fa fa-reddit" href="http://www.reddit.com/submit?url=<?= $this->url ?>&amp;title=<?= $this->title ?>" rel="nofollow" title="<?= $this->lang['share_on_reddit'] ?>" onclick="return shd.open(this.href,855,900);"></a></li>
+      <?php elseif ($network == 'whatsapp' && \Environment::get('agent')->mobile): ?>
+        <li><a class="whatsapp fa fa-whatsapp" href="whatsapp://send?text=<?= $this->description ? $this->description . '%0A%0A' : '' ?><?= $this->url ?>" data-action="share/whatsapp/share" rel="nofollow" title="<?= $this->lang['share_on_whatsapp'] ?>"></a></li>
+      <?php endif; ?>
+    <?php endforeach; ?>
+  </ul>
 </div>
 <!-- indexer::continue -->

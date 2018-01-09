@@ -24,7 +24,7 @@ $GLOBALS['TL_DCA']['tl_article']['palettes']['default'] = str_replace(',printabl
 $GLOBALS['TL_DCA']['tl_article']['fields']['sharebuttons_networks'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_networks'],
 	'exclude'                 => true,
-	'inputType'               => 'checkbox',
+	'inputType'               => 'checkboxWizard',
 	'options_callback'		  => array('ShareButtons','getNetworks'),
 	'eval'                    => array('multiple'=>true,'tl_class'=>'w50'),
 	'sql'                     => "blob NULL"
