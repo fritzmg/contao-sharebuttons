@@ -115,46 +115,39 @@ class ShareButtons
      * @param \Template $objTemplate
      * @param array $arrData
      * @param \Module $objModule
+     * 
+     * @return void
      */
-    public function parseArticles( \Template $objTemplate, $arrData, \Module $objModule )
+    public function parseArticles(\Template $objTemplate, $arrData, \Module $objModule)
     {
         // check for news module
-        if( strpos( get_class($objModule), 'ModuleNews') === false )
+        if(!$objModule instanceof \ModuleNews)
+        {
             return;
+        }
 
         // get the news archive
-        $objArchive = \NewsArchiveModel::findById( $arrData['pid'] );
+        $objArchive = \NewsArchiveModel::findById($arrData['pid']);
 
         // get the networks for the archive
-        $networksArchive = deserialize( $objArchive->sharebuttons_networks ); 
-
-        // get the networks for the article
-        $networksArticle = deserialize( $arrData['sharebuttons_networks'] );
-
-        // create merged networks
-        $networksMerged = array();
-        if( is_array( $networksArchive ) && is_array( $networksArticle ) )
-            $networksMerged = array_unique( array_merge( $networksArchive, $networksArticle ) );
-        else
-            $networksMerged = is_array( $networksArchive ) ? $networksArchive : ( is_array( $networksArticle ) ? $networksArticle : array() );
+        $arrNetworks = deserialize($objArchive->sharebuttons_networks, true); 
 
         // prepare sharebuttons string
         $strSharebuttons = '';
 
         // check if there are any networks
-        if( count( $networksMerged ) > 0 )
+        if (count($arrNetworks) > 0)
         {
             // set data
-            $networks    = $networksMerged;
-            $theme       = $arrData['sharebuttons_theme'] ?: $objArchive->sharebuttons_theme;
-            $template    = ( $arrData['sharebuttons_template'] && $arrData['sharebuttons_template'] != 'sharebuttons_default' ) ? $arrData['sharebuttons_template'] : $objArchive->sharebuttons_template;
+            $theme       = $objArchive->sharebuttons_theme;
+            $template    = $objArchive->sharebuttons_template;
             $url         = $objTemplate->link;
             $title       = $arrData['headline'];
             $description = $arrData['teaser'];
-            $image       = ( $objTemplate->addImage && $objTemplate->singleSRC ) ? \Environment::get('base') . $objTemplate->singleSRC : null;
+            $image       = ($objTemplate->addImage && $objTemplate->singleSRC) ? \Environment::get('base') . $objTemplate->singleSRC : null;
 
             // create the share buttons
-            $strSharebuttons = self::createShareButtons( $networks, $theme, $template, $url, $title, $description, $image );
+            $strSharebuttons = self::createShareButtons($arrNetworks, $theme, $template, $url, $title, $description, $image);
         }
 
         // set sharebuttons string
