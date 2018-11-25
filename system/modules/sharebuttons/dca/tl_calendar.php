@@ -26,7 +26,7 @@ if (\in_array('calendar', \ModuleLoader::getActive())) {
 		'label'                   => &$GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_networks'],
 		'exclude'                 => true,
 		'inputType'               => 'checkboxWizard',
-		'options_callback'		  => array('ShareButtons','getNetworks'),
+		'options_callback'        => array('ShareButtons','getNetworks'),
 		'eval'                    => array('multiple'=>true,'tl_class'=>'w50'),
 		'sql'                     => "blob NULL"
 	);
