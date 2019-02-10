@@ -5,11 +5,11 @@
  *
  * simple extension to provide a share buttons module
  * 
- * @copyright inspiredminds 2015
+ * @copyright inspiredminds 2015-2019
  * @package   sharebuttons
  * @link      http://www.inspiredminds.at
  * @author    Fritz Michael Gschwantner <fmg@inspiredminds.at>
- * @license   GPL-2.0
+ * @license   GPL-3.0-or-later
  */
 
 
@@ -31,6 +31,7 @@ $GLOBALS['TL_CTE']['links']['sharebuttons'] = 'ContentShareButtons';
 $GLOBALS['TL_HOOKS']['parseArticles'][] = array('ShareButtons','parseArticles');
 $GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('ShareButtons','replaceInsertTag');
 $GLOBALS['TL_HOOKS']['parseTemplate'][] = array('ShareButtons','parseTemplate');
+$GLOBALS['TL_HOOKS']['isVisibleElement'][] = array('ShareButtons','isVisibleElement');
 
 
 /**
@@ -53,7 +54,9 @@ $GLOBALS['sharebuttons']['networks'] = array(
 	'tumblr' => 'tumblr',
 	'pinterest' => 'Pinterest',
 	'reddit' => 'Reddit',
-	'whatsapp' => 'WhatsApp'
+	'whatsapp' => 'WhatsApp',
+	'print' => 'Print',
+	'pdf' => 'Pdf'
 );
 
 $GLOBALS['sharebuttons']['themes'] = array(

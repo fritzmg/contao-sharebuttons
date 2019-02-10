@@ -5,11 +5,11 @@
  *
  * simple extension to provide a share buttons module
  * 
- * @copyright inspiredminds 2015
+ * @copyright inspiredminds 2015-2019
  * @package   sharebuttons
  * @link      http://www.inspiredminds.at
  * @author    Fritz Michael Gschwantner <fmg@inspiredminds.at>
- * @license   GPL-2.0
+ * @license   GPL-3.0-or-later
  */
 
 
@@ -18,7 +18,7 @@ class ShareButtons
     const DEFAULT_THEME = '';
     const DEFAULT_TEMPLATE = 'sharebuttons_default';
 
-    public static function createShareButtons( $networks, $theme = self::DEFAULT_THEME, $template = self::DEFAULT_TEMPLATE, $url = null, $title = null, $description = null, $image = null )
+    public static function createShareButtons($networks, $theme = self::DEFAULT_THEME, $template = self::DEFAULT_TEMPLATE, $url = null, $title = null, $description = null, $image = null, $articleId = null)
     {
         // access to page
         global $objPage;
@@ -26,6 +26,8 @@ class ShareButtons
         // try to deserialize
         if( is_string( $networks ) )
             $networks = deserialize( $networks );
+
+        $networks = array_intersect(array_keys($GLOBALS['sharebuttons']['networks']), $networks);
 
         // if there are no networks, don't do anything
         if( !is_array( $networks ) || count( $networks ) == 0 )
@@ -72,6 +74,17 @@ class ShareButtons
         $translations['mail_subject'] = rawurlencode( $translations['mail_subject'] );
         $objButtonsTemplate->lang = $translations;
 
+        // add PDF link
+        if (\in_array('pdf', $networks)) {
+            $objArticle = $articleId ? \ArticleModel::findById($articleId) : \ArticleModel::findPublishedByPidAndColumn($objPage->id, 'main');
+
+            if (null !== $objArticle) {
+                $articleAlias = $objArticle->alias ?: $objArticle->id;
+                $articleHref = '/articles/' . (($objArticle->inColumn != 'main') ? $objArticle->inColumn . ':' : '') . $articleAlias;
+                $objButtonsTemplate->pdfLink = $objArticle->getRelated('pid')->getFrontendUrl($articleHref) . '?getpdf=' . $objArticle->id;
+            }
+        }
+
         // insert CSS if necessary
         if( $theme )
         {
@@ -88,21 +101,38 @@ class ShareButtons
         return $objButtonsTemplate->parse();
     }
 
-    public static function createInsertTag( $networks, $theme = '', $template = '' )
+    public static function createInsertTag($networks, $theme = '', $template = '', $articleId = null)
     {
         // try to deserialize
-        if( is_string( $networks ) )
-            $networks = deserialize( $networks );
+        if (is_string($networks)) {
+            $networks = deserialize($networks, true);
+        }
+
+        $networks = array_intersect(array_keys($GLOBALS['sharebuttons']['networks']), $networks);
 
         // check for networks
-        if( !is_array( $networks ) || count( $networks ) == 0 )
+        if (!\is_array($networks) || count($networks) === 0) {
             return '';
+        }
+
+        $elements = [];
+
+        if ($theme) {
+            $elements[] = $theme;
+        }
+
+        if ($template) {
+            $elements[] = $template;
+        }
+
+        $elements[] = implode(':', $networks);
+
+        if ($articleId) {
+            $elements[] = $articleId;
+        }
 
         // build insert tag
-        $strInsertTag = '{{sharebuttons';
-        if( $theme ) $strInsertTag.= '::'.$theme;
-        if( $template ) $strInsertTag.= '::'.$template;
-        $strInsertTag.= '::'.implode(':', $networks).'}}';
+        $strInsertTag = '{{sharebuttons::' . implode('::', $elements) . '}}';
 
         // return insert tag
         return $strInsertTag;
@@ -183,7 +213,7 @@ class ShareButtons
                 $description = $objTemplate->teaser;
 
                 // create the share buttons
-                $strSharebuttons = self::createShareButtons( $networks, $theme, $template, $url, $title, $description );                
+                $strSharebuttons = self::createShareButtons($networks, $theme, $template, $url, $title, $description, null, $objTemplate->id);                
             }
 
             // set sharebuttons variable
@@ -248,34 +278,66 @@ class ShareButtons
         $networks = array();
         $theme = self::DEFAULT_THEME;
         $template = self::DEFAULT_TEMPLATE;
+        $articleId = null;
 
         // go through each parameter
-        while( count( $arrTag ) > 0 )
-        {
+        while (count($arrTag) > 0) {
             // get the parameter
-            $strParam = array_shift( $arrTag );
+            $strParam = array_shift($arrTag);
 
             // check for theme
-            if( in_array( $strParam, array_keys( $GLOBALS['sharebuttons']['themes'] ) ) )
-            {
+            if (in_array($strParam, array_keys($GLOBALS['sharebuttons']['themes']))) {
                 $theme = $strParam;
                 continue;
             }
 
             // check for template
-            if( strpos( $strParam, 'sharebuttons_' ) !== false )
-            {
+            if (strpos($strParam, 'sharebuttons_') !== false) {
                 $template = $strParam;
                 continue;
             }
 
+            // check for article id
+            if (is_numeric($strParam)) {
+                $articleId = (int) $strParam;
+            }
+
             // check for networks
-            if( count( $networks ) == 0 )
-                $networks = array_intersect( explode( ':', $strParam ), array_keys( $GLOBALS['sharebuttons']['networks'] ) );
+            if (count($networks) == 0) {
+                $networks = array_intersect(explode(':', $strParam ), array_keys($GLOBALS['sharebuttons']['networks']));
+            }
         }
 
         // create sharebuttons
-        return self::createShareButtons( $networks, $theme, $template );
+        return self::createShareButtons($networks, $theme, $template, null, null, null, null, $articleId);
+    }
+
+
+    /**
+     * isVisibleElement hook
+     * 
+     * @param Model $objElement
+     * @param bool $blnReturn
+     *
+     * @return bool
+     */
+    public function isVisibleElement(\Model $objElement, bool $blnReturn): bool
+    {
+        if ($objElement instanceof \ArticleModel && null !== ($articleId = \Input::get('getpdf')) && (int) $objElement->id === (int) $articleId) {
+            \Input::setGet('pdf', $articleId);
+            $printable = $objElement->printable;
+
+            if ((int) $printable !== 1) {
+                $options = $printable ? \StringUtil::deserialize($printable) : [];
+
+                if (!\in_array('pdf', $options)) {
+                    $options[] = 'pdf';
+                    $objElement->printable = serialize($options);
+                }
+            }
+        }
+
+        return $blnReturn;
     }
 
 

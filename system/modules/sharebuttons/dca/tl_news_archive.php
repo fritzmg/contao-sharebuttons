@@ -5,11 +5,11 @@
  *
  * simple extension to provide a share buttons module
  * 
- * @copyright inspiredminds 2014-2017
+ * @copyright inspiredminds 2014-2019-2017
  * @package   sharebuttons
  * @link      http://www.inspiredminds.at
  * @author    Fritz Michael Gschwantner <fmg@inspiredminds.at>
- * @license   GPL-2.0
+ * @license   GPL-3.0-or-later
  */
  
 

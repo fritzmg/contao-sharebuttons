@@ -5,11 +5,11 @@
  *
  * simple extension to provide a share buttons module
  * 
- * @copyright inspiredminds 2015
+ * @copyright inspiredminds 2015-2019
  * @package   sharebuttons
  * @link      http://www.inspiredminds.at
  * @author    Fritz Michael Gschwantner <fmg@inspiredminds.at>
- * @license   GPL-2.0
+ * @license   GPL-3.0-or-later
  */
 
 
@@ -24,6 +24,8 @@ $GLOBALS['TL_LANG']['sharebuttons']['share_on_tumblr'] = "auf tumblr teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_pinterest'] = "auf Pinterest teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_reddit'] = "auf Reddit teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_whatsapp'] = "über WhatsApp teilen";
+$GLOBALS['TL_LANG']['sharebuttons']['print_page'] = "Seite drucken";
+$GLOBALS['TL_LANG']['sharebuttons']['create_pdf'] = "Seite als PDF downloaden";
 $GLOBALS['TL_LANG']['sharebuttons']['mail_subject'] = "Website Empfehlung";
 
 $GLOBALS['TL_LANG']['sharebuttons']['sharebuttons_legend'] = "Share buttons";
@@ -39,3 +41,6 @@ $GLOBALS['TL_LANG']['tl_calendar']['sharebuttons_legend'] = $GLOBALS['TL_LANG'][
 
 $GLOBALS['TL_LANG']['CTE']['sharebuttons'] = array('Share buttons', 'Buttons zum teilen von Seitenlinks auf sozialen Netzwerken.');
 $GLOBALS['TL_LANG']['FMD']['sharebuttons'] = $GLOBALS['TL_LANG']['CTE']['sharebuttons'];
+
+$GLOBALS['sharebuttons']['networks']['print'] = 'Drucken';
+$GLOBALS['sharebuttons']['networks']['pdf'] = 'PDF erzeugen';

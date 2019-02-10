@@ -1,4 +1,4 @@
-[![](https://img.shields.io/maintenance/yes/2018.svg)](https://github.com/fritzmg/contao-sharebuttons)
+[![](https://img.shields.io/maintenance/yes/2019.svg)](https://github.com/fritzmg/contao-sharebuttons)
 [![](https://img.shields.io/packagist/v/fritzmg/contao-sharebuttons.svg)](https://packagist.org/packages/fritzmg/contao-sharebuttons)
 [![](https://img.shields.io/packagist/dt/fritzmg/contao-sharebuttons.svg)](https://packagist.org/packages/fritzmg/contao-sharebuttons)
 
@@ -81,6 +81,12 @@ The following insert tag would simply generate the HTML source for a Facebook, T
 ```
 
 Have a look at the `$GLOBALS['sharebuttons']['themes']` and `$GLOBALS['sharebuttons']['networks']` array in [`config/config.php`](https://github.com/fritzmg/contao-sharebuttons/blob/master/system/modules/sharebuttons/config/config.php) in order to find the key-string for your desired networks and theme.
+
+Since version `2.1.0` you can also define an article ID, if you want to provide a PDF link for a specific article:
+
+```
+{{sharebuttons::pdf::6}}
+```
 
 ## Pinterest button
 
