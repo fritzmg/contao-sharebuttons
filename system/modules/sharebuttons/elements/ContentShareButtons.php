@@ -9,7 +9,7 @@
  * @package   sharebuttons
  * @link      http://www.inspiredminds.at
  * @author    Fritz Michael Gschwantner <fmg@inspiredminds.at>
- * @license   GPL-3.0-or-later
+ * @license   LGPL-3.0-or-later
  */
 
 

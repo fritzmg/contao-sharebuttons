@@ -4,7 +4,7 @@
     "keywords":["contao", "share", "buttons", "social", "facebook", "twitter"],
     "type": "contao-module",
     "homepage": "http://www.inspiredminds.at",
-    "license": "GPL-3.0-or-later",
+    "license": "LGPL-3.0-or-later",
     "authors":[
         {
             "name": "Fritz Michael Gschwantner",
