@@ -27,7 +27,7 @@ class ShareButtons
         if( is_string( $networks ) )
             $networks = deserialize( $networks );
 
-        $networks = array_intersect(array_keys($GLOBALS['sharebuttons']['networks']), $networks);
+        $networks = array_intersect($networks, array_keys($GLOBALS['sharebuttons']['networks']));
 
         // if there are no networks, don't do anything
         if( !is_array( $networks ) || count( $networks ) == 0 )
@@ -108,7 +108,7 @@ class ShareButtons
             $networks = deserialize($networks, true);
         }
 
-        $networks = array_intersect(array_keys($GLOBALS['sharebuttons']['networks']), $networks);
+        $networks = array_intersect($networks, array_keys($GLOBALS['sharebuttons']['networks']));
 
         // check for networks
         if (!\is_array($networks) || count($networks) === 0) {
