@@ -9,6 +9,7 @@
  * @package   sharebuttons
  * @link      http://www.inspiredminds.at
  * @author    Fritz Michael Gschwantner <fmg@inspiredminds.at>
+ * @author    Ingolf Steinhardt <info@e-spin.de>
  * @license   LGPL-3.0-or-later
  */
 
@@ -108,7 +109,7 @@ class ShareButtons
             $networks = deserialize($networks, true);
         }
 
-        $networks = array_intersect(array_keys($GLOBALS['sharebuttons']['networks']), $networks);
+        $networks = array_intersect($networks, array_keys($GLOBALS['sharebuttons']['networks']));
 
         // check for networks
         if (!\is_array($networks) || count($networks) === 0) {
