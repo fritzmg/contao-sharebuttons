@@ -355,15 +355,8 @@ class ShareButtons
             $themes[$k] = $v[0];
         return $themes;
     }
-    public function getSharebuttonsTemplates(DataContainer $dc)
+    public function getSharebuttonsTemplates()
     {
-        $intPid = $dc->activeRecord->pid;
-
-        if (\Input::get('act') == 'overrideAll')
-        {
-            $intPid = \Input::get('id');
-        }
-
-        return \Controller::getTemplateGroup('sharebuttons_', $intPid);
+        return \Controller::getTemplateGroup('sharebuttons_');
     }
 }
