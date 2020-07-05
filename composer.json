@@ -19,6 +19,12 @@
         "source": "https://github.com/fritzmg/contao-sharebuttons",
         "forum": "https://community.contao.org/de"
     },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/fritzmg"
+        }
+    ],
     "require":{
         "php": ">=7.1",
         "contao/core-bundle": "^3.5 || ^4.2",
