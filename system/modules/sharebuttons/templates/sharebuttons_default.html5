@@ -7,8 +7,6 @@
         <li><a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?= $this->url ?>&amp;t=<?= $this->title ?>" rel="nofollow" title="<?= $this->lang['share_on_facebook'] ?>" onclick="return shd.open(this.href,600,300);">Facebook</a></li>
       <?php elseif ($network == 'twitter'): ?>
         <li><a class="twitter" href="https://twitter.com/intent/tweet?url=<?= $this->url ?>&amp;text=<?= $this->title ?>" rel="nofollow" title="<?= $this->lang['share_on_twitter'] ?>" onclick="return shd.open(this.href,500,260);">Twitter</a></li>
-      <?php elseif ($network == 'gplus'): ?>
-        <li><a class="gplus" href="https://plus.google.com/share?url=<?= $this->url ?>" rel="nofollow" title="<?= $this->lang['share_on_gplus'] ?>" onclick="return shd.open(this.href,520,450);">Google+</a></li>
       <?php elseif ($network == 'linkedin'): ?>
         <li><a class="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?= $this->url ?>&amp;title=<?= $this->title ?>" rel="nofollow" title="<?= $this->lang['share_on_linkedin'] ?>" onclick="return shd.open(this.href,520,570);">LinkedIn</a></li>
       <?php elseif ($network == 'xing'): ?>

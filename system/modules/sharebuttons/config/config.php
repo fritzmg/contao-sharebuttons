@@ -47,7 +47,6 @@ if( TL_MODE == 'BE' )
 $GLOBALS['sharebuttons']['networks'] = array(
 	'facebook' => 'Facebook',
 	'twitter' => 'Twitter',
-	'gplus' => 'Google+',
 	'linkedin' => 'LinkedIn',
 	'xing' => 'Xing',
 	'mail' => 'E-Mail',

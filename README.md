@@ -26,7 +26,7 @@ From top to bottom:
 - Simple Icons White (grey background added for visibility)
 - Font Awesome
 
-The "Contao" theme uses Contao's own icons, however only Facebook, Twitter and Google+ is available there. There is also a theme called "Text", which simply aligns the elements horizontally, but leaves the textual content of each button visible.
+The "Contao" theme uses Contao's own icons, however only Facebook, and Twitter is available there. There is also a theme called "Text", which simply aligns the elements horizontally, but leaves the textual content of each button visible.
 
 The following themes offer higher resolution images for devices with high DPI:
 
@@ -70,13 +70,13 @@ Since version 1.1.0 there is also an insert tag available. The name of the inser
 All parameters are optional (however, without any networks, nothing will be displayed). The following insert tag would create share buttons with the `boxxed` theme with all currently available social networks:
 
 ```
-{{sharebuttons::boxxed::facebook:twitter:gplus:linkedin:xing:mail:tumblr:pinterest:reddit}}
+{{sharebuttons::boxxed::facebook:twitter:linkedin:xing:mail:tumblr:pinterest:reddit:whatsapp:print:pdf}}
 ```
 
-The following insert tag would simply generate the HTML source for a Facebook, Twitter and Google+ share button, without including a stylesheet for a theme:
+The following insert tag would simply generate the HTML source for a Facebook and Twitter share button, without including a stylesheet for a theme:
 
 ```
-{{sharebuttons::facebook:twitter:gplus}}
+{{sharebuttons::facebook:twitter}}
 ```
 
 Have a look at the `$GLOBALS['sharebuttons']['themes']` and `$GLOBALS['sharebuttons']['networks']` array in [`config/config.php`](https://github.com/fritzmg/contao-sharebuttons/blob/master/system/modules/sharebuttons/config/config.php) in order to find the key-string for your desired networks and theme.
