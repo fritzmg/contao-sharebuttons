@@ -42,5 +42,5 @@ $GLOBALS['TL_LANG']['tl_calendar']['sharebuttons_legend'] = $GLOBALS['TL_LANG'][
 $GLOBALS['TL_LANG']['CTE']['sharebuttons'] = array('Share buttons', 'Buttons zum teilen von Seitenlinks auf sozialen Netzwerken.');
 $GLOBALS['TL_LANG']['FMD']['sharebuttons'] = $GLOBALS['TL_LANG']['CTE']['sharebuttons'];
 
-$GLOBALS['sharebuttons']['networks']['print'] = 'Drucken';
-$GLOBALS['sharebuttons']['networks']['pdf'] = 'PDF erzeugen';
+$GLOBALS['TL_LANG']['sharebuttons']['networks']['print'] =  'Drucken';
+$GLOBALS['TL_LANG']['sharebuttons']['networks']['pdf'] = 'PDF erzeugen';

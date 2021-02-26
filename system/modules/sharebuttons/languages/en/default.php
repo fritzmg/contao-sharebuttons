@@ -42,4 +42,4 @@ $GLOBALS['TL_LANG']['tl_calendar']['sharebuttons_legend'] = $GLOBALS['TL_LANG'][
 $GLOBALS['TL_LANG']['CTE']['sharebuttons'] = array('Share buttons', 'Social share buttons with optional theme.');
 $GLOBALS['TL_LANG']['FMD']['sharebuttons'] = $GLOBALS['TL_LANG']['CTE']['sharebuttons'];
 
-$GLOBALS['sharebuttons']['networks']['pdf'] = 'create PDF';
+$GLOBALS['TL_LANG']['sharebuttons']['networks']['pdf'] = 'create PDF';

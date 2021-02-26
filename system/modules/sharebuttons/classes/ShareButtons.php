@@ -396,6 +396,12 @@ class ShareButtons
             unset($networks['pdf']);
         }
 
+        foreach ($networks as $network => &$label) {
+            if (!empty($GLOBALS['TL_LANG']['sharebuttons']['networks'][$network])) {
+                $label = $GLOBALS['TL_LANG']['sharebuttons']['networks'][$network];
+            }
+        }
+
         return $networks;
     }
 

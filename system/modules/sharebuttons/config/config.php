@@ -55,7 +55,7 @@ $GLOBALS['sharebuttons']['networks'] = array(
 	'reddit' => 'Reddit',
 	'whatsapp' => 'WhatsApp',
 	'print' => 'Print',
-	'pdf' => 'Pdf'
+	'pdf' => 'PDF'
 );
 
 $GLOBALS['sharebuttons']['themes'] = array(
