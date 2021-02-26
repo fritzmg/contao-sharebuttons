@@ -12,6 +12,11 @@
  * @license   LGPL-3.0-or-later
  */
 
+use Contao\ArticleModel;
+use Contao\ContentModel;
+use Contao\DataContainer;
+use Contao\Input;
+use Contao\StringUtil;
 
 class ShareButtons
 {
@@ -79,9 +84,8 @@ class ShareButtons
             $objArticle = $articleId ? \ArticleModel::findById($articleId) : \ArticleModel::findPublishedByPidAndColumn($objPage->id, 'main');
 
             if (null !== $objArticle) {
-                $articleAlias = $objArticle->alias ?: $objArticle->id;
-                $articleHref = '/articles/' . (($objArticle->inColumn != 'main') ? $objArticle->inColumn . ':' : '') . $articleAlias;
-                $objButtonsTemplate->pdfLink = $objArticle->getRelated('pid')->getFrontendUrl($articleHref) . '?getpdf=' . $objArticle->id;
+                $request = Environment::get('indexFreeRequest');
+                $objButtonsTemplate->pdfLink = $request . ((strpos($request, '?') !== false) ? '&amp;' : '?') . 'pdf=' . $objArticle->id;
             }
         }
 
@@ -314,7 +318,8 @@ class ShareButtons
 
 
     /**
-     * isVisibleElement hook
+     * This dynamically allows PDF printing by checking whether a "pdf" share 
+     * network is enabled for the article itself or one of its content elements.
      * 
      * @param Model $objElement
      * @param bool $blnReturn
@@ -323,17 +328,55 @@ class ShareButtons
      */
     public function isVisibleElement(\Model $objElement, bool $blnReturn): bool
     {
-        if ($objElement instanceof \ArticleModel && null !== ($articleId = \Input::get('getpdf')) && (int) $objElement->id === (int) $articleId) {
-            \Input::setGet('pdf', $articleId);
-            $printable = $objElement->printable;
+        if (!$objElement instanceof ArticleModel) {
+            return $blnReturn;
+        }
 
-            if ((int) $printable !== 1) {
-                $options = $printable ? \StringUtil::deserialize($printable) : [];
+        $articleId = Input::get('pdf');
 
-                if (!\in_array('pdf', $options)) {
-                    $options[] = 'pdf';
-                    $objElement->printable = serialize($options);
-                }
+        if (null === $articleId || (int) $objElement->id !== (int) $articleId) {
+            return $blnReturn;
+        }
+
+        $printable = $objElement->printable;
+
+        if ((int) $printable === 1) {
+            return $blnReturn;
+        }
+
+        $options = StringUtil::deserialize($printable, true);
+
+        if (\in_array('pdf', $options)) {
+            return $blnReturn;
+        }
+
+        $articleNetworks = StringUtil::deserialize($objElement->sharebuttons_networks, true);
+
+        if (\in_array('pdf', $articleNetworks)) {
+            $options[] = 'pdf';
+            $objElement->printable = serialize($options);
+
+            return $blnReturn;
+        }
+
+        $elements = ContentModel::findPublishedByPidAndTable((int) $objElement->id, $objElement->getTable());
+
+        if (null === $elements) {
+            return $blnReturn;
+        }
+
+        foreach ($elements as $element) {
+            if ('sharebuttons' !== $element->type) {
+                continue;
+            }
+
+            $elementNetworks = StringUtil::deserialize($element->sharebuttons_networks, true);
+
+            if (\in_array('pdf', $elementNetworks)) {
+                $options[] = 'pdf';
+                $objElement->printable = serialize($options);
+
+                return $blnReturn;
             }
         }
 
@@ -344,10 +387,18 @@ class ShareButtons
     /**
      * DCA functions
      */
-    public function getNetworks()
+    public function getNetworks(DataContainer $dc)
     {
-        return $GLOBALS['sharebuttons']['networks'];
+        $networks = $GLOBALS['sharebuttons']['networks'];
+
+        // Only allow PDF button in article settings and as a content element
+        if (!\in_array($dc->table, ['tl_article', 'tl_content'], true)) {
+            unset($networks['pdf']);
+        }
+
+        return $networks;
     }
+
     public function getButtonThemes()
     {
         $themes = array( '' => $GLOBALS['TL_LANG']['sharebuttons']['no_theme'] );
@@ -355,6 +406,7 @@ class ShareButtons
             $themes[$k] = $v[0];
         return $themes;
     }
+
     public function getSharebuttonsTemplates()
     {
         return \Controller::getTemplateGroup('sharebuttons_');
