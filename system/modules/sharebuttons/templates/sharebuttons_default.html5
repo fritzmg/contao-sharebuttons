@@ -20,8 +20,8 @@
       <?php endif ;?>
       <?php if ($network == 'reddit'): ?>
         <li><a class="reddit" href="http://www.reddit.com/submit?url=<?= $this->url ?>&amp;title=<?= $this->title ?>" rel="noopener noreferrer nofollow" data-escargot-ignore title="<?= $this->lang['share_on_reddit'] ?>" onclick="return shd.open(this.href,855,900);">Reddit</a></li>
-      <?php elseif ($network == 'whatsapp' && \Environment::get('agent')->mobile): ?>
-        <li><a class="whatsapp" href="whatsapp://send?text=<?= $this->description ? $this->description . '%0A%0A' : '' ?><?= $this->url ?>" data-action="share/whatsapp/share" rel="noopener noreferrer nofollow" data-escargot-ignore title="<?= $this->lang['share_on_whatsapp'] ?>">WhatsApp</a></li>
+      <?php elseif ($network == 'whatsapp'): ?>
+        <li><a class="whatsapp" href="https://wa.me/?text=<?= $this->description ? $this->description . '%0A%0A' : '' ?><?= $this->url ?>" target="_blank" data-action="share/whatsapp/share" rel="noopener noreferrer nofollow" data-escargot-ignore title="<?= $this->lang['share_on_whatsapp'] ?>">WhatsApp</a></li>
       <?php elseif ($network == 'print'): ?>
         <li><a class="print" href="#" rel="noopener noreferrer nofollow" data-escargot-ignore title="<?= $this->lang['print_page'] ?>" onclick="window.print();return false"><?= $this->lang['print_page'] ?></a></li>
       <?php elseif ($network == 'pdf' && $this->pdfLink): ?>
