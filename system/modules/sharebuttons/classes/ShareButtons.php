@@ -13,10 +13,20 @@
  */
 
 use Contao\ArticleModel;
+use Contao\CalendarModel;
 use Contao\ContentModel;
+use Contao\Controller;
 use Contao\DataContainer;
+use Contao\Environment;
+use Contao\FrontendTemplate;
 use Contao\Input;
+use Contao\Model;
+use Contao\Module;
+use Contao\ModuleNews;
+use Contao\NewsArchiveModel;
 use Contao\StringUtil;
+use Contao\System;
+use Contao\Template;
 
 class ShareButtons
 {
@@ -30,7 +40,7 @@ class ShareButtons
 
         // try to deserialize
         if( is_string( $networks ) )
-            $networks = deserialize( $networks );
+            $networks = StringUtil::deserialize( $networks );
 
         $networks = array_intersect($networks, array_keys($GLOBALS['sharebuttons']['networks']));
 
@@ -54,21 +64,21 @@ class ShareButtons
             $template = self::DEFAULT_TEMPLATE;
 
         // create share buttons template
-        $objButtonsTemplate = new \FrontendTemplate( $template );
+        $objButtonsTemplate = new FrontendTemplate( $template );
 
         // assign enabled networks to template
         $objButtonsTemplate->networks = $networks;
 
         // determine the share image (e.g. for pinterest)
         if( !$image && isset( $GLOBALS['SOCIAL_IMAGES'] ) && is_array( $GLOBALS['SOCIAL_IMAGES'] ) && count( $GLOBALS['SOCIAL_IMAGES'] ) > 0 )
-            $image = \Environment::get('base') . $GLOBALS['SOCIAL_IMAGES'][0];
+            $image = Environment::get('base') . $GLOBALS['SOCIAL_IMAGES'][0];
 
         // process url
         if( $url && stripos( $url, 'http' ) !== 0 )
-            $url = \Environment::get('base') . $url;
+            $url = Environment::get('base') . $url;
 
         // assign url, title, theme, image, description to template
-        $objButtonsTemplate->url         = rawurlencode( $url ?: \Environment::get('base') . \Environment::get('request') );
+        $objButtonsTemplate->url         = rawurlencode( $url ?: Environment::get('base') . Environment::get('request') );
         $objButtonsTemplate->title       = rawurlencode( strip_tags( $title ?: ( $objPage->pageTitle ?: $objPage->title ) ) );
         $objButtonsTemplate->theme       = $theme;
         $objButtonsTemplate->image       = rawurlencode( $image );
@@ -81,7 +91,7 @@ class ShareButtons
 
         // add PDF link
         if (\in_array('pdf', $networks)) {
-            $objArticle = $articleId ? \ArticleModel::findById($articleId) : \ArticleModel::findPublishedByPidAndColumn($objPage->id, 'main');
+            $objArticle = $articleId ? ArticleModel::findById($articleId) : ArticleModel::findPublishedByPidAndColumn($objPage->id, 'main');
 
             if (null !== $objArticle) {
                 $request = Environment::get('indexFreeRequest');
@@ -94,7 +104,14 @@ class ShareButtons
         {
             $GLOBALS['TL_CSS'][] ='system/modules/sharebuttons/assets/base.css||static';
             $css_theme = $GLOBALS['sharebuttons']['themes'][ $theme ][1];
-            if( is_file( TL_ROOT . '/' . $css_theme ) )
+
+            if (defined('TL_ROOT')) {
+                $projectDir = constant('TL_ROOT');
+            } else {
+                $projectDir = System::getContainer()->getParameter('kernel.project_dir');
+            }
+
+            if( is_file( $projectDir . '/' . $css_theme ) )
                 $GLOBALS['TL_CSS'][] = $css_theme.'||static';
         }
 
@@ -109,7 +126,7 @@ class ShareButtons
     {
         // try to deserialize
         if (is_string($networks)) {
-            $networks = deserialize($networks, true);
+            $networks = StringUtil::deserialize($networks, true);
         }
 
         $networks = array_intersect($networks, array_keys($GLOBALS['sharebuttons']['networks']));
@@ -152,19 +169,19 @@ class ShareButtons
      * 
      * @return void
      */
-    public function parseArticles(\Template $objTemplate, $arrData, \Module $objModule)
+    public function parseArticles(Template $objTemplate, $arrData, Module $objModule)
     {
         // check for news module
-        if(!$objModule instanceof \ModuleNews)
+        if(!$objModule instanceof ModuleNews)
         {
             return;
         }
 
         // get the news archive
-        $objArchive = \NewsArchiveModel::findById($arrData['pid']);
+        $objArchive = NewsArchiveModel::findById($arrData['pid']);
 
         // get the networks for the archive
-        $arrNetworks = deserialize($objArchive->sharebuttons_networks, true); 
+        $arrNetworks = StringUtil::deserialize($objArchive->sharebuttons_networks, true); 
 
         // prepare sharebuttons string
         $strSharebuttons = '';
@@ -178,7 +195,7 @@ class ShareButtons
             $url         = $objTemplate->link;
             $title       = $arrData['headline'];
             $description = $arrData['teaser'];
-            $image       = ($objTemplate->addImage && $objTemplate->singleSRC) ? \Environment::get('base') . $objTemplate->singleSRC : null;
+            $image       = ($objTemplate->addImage && $objTemplate->singleSRC) ? Environment::get('base') . $objTemplate->singleSRC : null;
 
             // create the share buttons
             $strSharebuttons = self::createShareButtons($arrNetworks, $theme, $template, $url, $title, $description, $image);
@@ -194,7 +211,7 @@ class ShareButtons
      *
      * @param \Template $objTempalte
      */
-    public function parseTemplate( \Template $objTemplate )
+    public function parseTemplate( Template $objTemplate )
     {
         // check for mod_article template
         if( stripos( $objTemplate->getName(), 'mod_article' ) !== false )
@@ -203,7 +220,7 @@ class ShareButtons
             $strSharebuttons = '';
 
             // get the networks
-            $arrNetworks = deserialize( $objTemplate->sharebuttons_networks );
+            $arrNetworks = StringUtil::deserialize( $objTemplate->sharebuttons_networks );
 
             // check if there are any networks
             if( $arrNetworks )
@@ -230,10 +247,10 @@ class ShareButtons
             $strSharebuttons = '';
 
             // get the calendar
-            if( ( $objCalendar = \CalendarModel::findById( $objTemplate->pid ) ) !== null )
+            if( ( $objCalendar = CalendarModel::findById( $objTemplate->pid ) ) !== null )
             {
                 // get the networks
-                $arrNetworks = deserialize( $objCalendar->sharebuttons_networks );
+                $arrNetworks = StringUtil::deserialize( $objCalendar->sharebuttons_networks );
 
                 // check if there are any networks
                 if( $arrNetworks )
@@ -326,7 +343,7 @@ class ShareButtons
      *
      * @return bool
      */
-    public function isVisibleElement(\Model $objElement, bool $blnReturn): bool
+    public function isVisibleElement(Model $objElement, bool $blnReturn): bool
     {
         if (!$objElement instanceof ArticleModel) {
             return $blnReturn;
@@ -415,6 +432,22 @@ class ShareButtons
 
     public function getSharebuttonsTemplates()
     {
-        return \Controller::getTemplateGroup('sharebuttons_');
+        return Controller::getTemplateGroup('sharebuttons_');
+    }
+
+    public static function isBackendRequest(): bool
+    {
+        if (method_exists(System::class, 'getContainer')) {
+            $container = System::getContainer();
+            $request = $container->get('request_stack')->getCurrentRequest();
+            
+            return $request && $container->get('contao.routing.scope_matcher')->isBackendRequest($request);
+        }
+
+        if (defined('TL_MODE')) {
+            return 'BE' === constant('TL_MODE');
+        }
+
+        return false;
     }
 }

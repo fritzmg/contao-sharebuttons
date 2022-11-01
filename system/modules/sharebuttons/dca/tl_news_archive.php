@@ -11,9 +11,16 @@
  * @author    Fritz Michael Gschwantner <fmg@inspiredminds.at>
  * @license   LGPL-3.0-or-later
  */
- 
 
-if (\in_array('news', \ModuleLoader::getActive())) {
+use Contao\NewsBundle\ContaoNewsBundle;
+ 
+if (class_exists(Contao\ModuleLoader::class)) {
+	$add = \in_array('news', Contao\ModuleLoader::getActive());
+} else {
+	$add = class_exists(ContaoNewsBundle::class);
+}
+
+if ($add) {
     /**
      * Add palettes to tl_news_archive
      */

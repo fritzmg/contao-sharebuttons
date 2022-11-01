@@ -12,8 +12,9 @@
  * @license   LGPL-3.0-or-later
  */
 
+use Contao\ContentElement;
 
-class ContentShareButtons extends \ContentElement
+class ContentShareButtons extends ContentElement
 {
     /**
      * Template
@@ -27,7 +28,7 @@ class ContentShareButtons extends \ContentElement
     protected function compile()
     {
         // show share buttons in backend
-        if( TL_MODE == 'BE' )
+        if(ShareButtons::isBackendRequest())
             $this->Template->sharebuttons = ShareButtons::createShareButtons($this->sharebuttons_networks, 
                                                                              $this->sharebuttons_theme, 
                                                                              $this->sharebuttons_template,

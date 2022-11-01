@@ -12,8 +12,15 @@
  * @license   LGPL-3.0-or-later
  */
 
+use Contao\CalendarBundle\ContaoCalendarBundle;
 
-if (\in_array('calendar', \ModuleLoader::getActive())) {
+if (class_exists(Contao\ModuleLoader::class)) {
+	$add = \in_array('calendar', Contao\ModuleLoader::getActive());
+} else {
+	$add = class_exists(ContaoCalendarBundle::class);
+}
+
+if ($add) {
 	/**
 	 * Add palettes to tl_calendar
 	 */

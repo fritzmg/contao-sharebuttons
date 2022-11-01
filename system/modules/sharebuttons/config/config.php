@@ -37,9 +37,9 @@ $GLOBALS['TL_HOOKS']['isVisibleElement'][] = array('ShareButtons','isVisibleElem
 /**
  * CSS
  */
-if( TL_MODE == 'BE' )
+if (ShareButtons::isBackendRequest()) {
 	$GLOBALS['TL_CSS'][] = 'system/modules/sharebuttons/assets/backend.css';
-
+}
 
 /**
  * Custom settings

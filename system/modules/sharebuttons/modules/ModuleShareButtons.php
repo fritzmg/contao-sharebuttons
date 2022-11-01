@@ -12,8 +12,9 @@
  * @license   LGPL-3.0-or-later
  */
 
+use Contao\Module;
 
-class ModuleShareButtons extends \Module
+class ModuleShareButtons extends Module
 {
     /**
      * Template

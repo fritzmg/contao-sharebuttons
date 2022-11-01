@@ -26,8 +26,8 @@
         }
     ],
     "require":{
-        "php": "^7.1 || ^8.0",
-        "contao/core-bundle": "^4.4",
+        "php": ">=7.1",
+        "contao/core-bundle": "^4.4 || ^5.0",
         "contao-community-alliance/composer-plugin": "^2.4 || ^3.0"
     },
     "replace": {
@@ -39,5 +39,12 @@
                 "system/modules/sharebuttons": "system/modules/sharebuttons"
             }
         }
+    },
+    "autoload": {
+        "classmap": [
+            "system/modules/sharebuttons/classes/",
+            "system/modules/sharebuttons/elements/",
+            "system/modules/sharebuttons/modules/"
+        ]
     }
 }
