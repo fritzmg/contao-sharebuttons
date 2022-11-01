@@ -38,6 +38,10 @@ class ShareButtons
         // access to page
         global $objPage;
 
+        if (!$objPage) {
+            return '';
+        }
+
         // try to deserialize
         if( is_string( $networks ) )
             $networks = StringUtil::deserialize( $networks );
