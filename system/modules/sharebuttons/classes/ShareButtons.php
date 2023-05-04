@@ -120,7 +120,7 @@ class ShareButtons
         }
 
         // insert javascript
-        $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/sharebuttons/assets/scripts.js|static';
+        $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/sharebuttons/assets/scripts.js|async';
 
         // return parsed template
         return $objButtonsTemplate->parse();

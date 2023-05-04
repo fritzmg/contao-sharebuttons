@@ -8,7 +8,7 @@
       <?php elseif ($network == 'twitter'): ?>
         <li><a class="twitter fa fa-twitter" href="https://twitter.com/intent/tweet?url=<?= $this->url ?>&amp;text=<?= $this->title ?>" rel="noopener noreferrer nofollow" data-escargot-ignore title="<?= $this->lang['share_on_twitter'] ?>" onclick="return shd.open(this.href,500,260);"></a></li>
       <?php elseif ($network == 'linkedin'): ?>
-        <li><a class="linkedin fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?= $this->url ?>&amp;title=<?= $this->title ?>" rel="noopener noreferrer nofollow" data-escargot-ignore title="<?= $this->lang['share_on_linkedin'] ?>" onclick="return shd.open(this.href,520,570);"></a></li>
+        <li><a class="linkedin fa fa-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?= $this->url ?>&amp;title=<?= $this->title ?>" rel="noopener noreferrer nofollow" data-escargot-ignore title="<?= $this->lang['share_on_linkedin'] ?>" onclick="return shd.open(this.href,520,570);"></a></li>
       <?php elseif ($network == 'xing'): ?>
         <li><a class="xing fa fa-xing" href="https://www.xing.com/social_plugins/share/new?sc_p=xing-share&amp;h=1&amp;url=<?= $this->url ?>" rel="noopener noreferrer nofollow" data-escargot-ignore title="<?= $this->lang['share_on_xing'] ?>" onclick="return shd.open(this.href,460,460);"></a></li>
       <?php elseif ($network == 'mail'): ?>
