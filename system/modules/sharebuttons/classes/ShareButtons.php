@@ -130,10 +130,14 @@ class ShareButtons
     {
         // try to deserialize
         if (is_string($networks)) {
-            $networks = StringUtil::deserialize($networks, true);
+            $networks = StringUtil::deserialize($networks);
         }
 
-        $networks = array_intersect($networks, array_keys($GLOBALS['sharebuttons']['networks']));
+        if (!is_array($networks)) {
+            return '';
+        }
+
+        $networks = array_intersect($networks, array_keys($GLOBALS['sharebuttons']['networks'] ?? []));
 
         // check for networks
         if (!\is_array($networks) || count($networks) === 0) {
