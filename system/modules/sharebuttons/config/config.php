@@ -46,8 +46,9 @@ if (ShareButtons::isBackendRequest()) {
  */
 $GLOBALS['sharebuttons']['networks'] = array(
 	'facebook' => 'Facebook',
-	'twitter' => 'Twitter',
+	'twitter' => 'X (ehemals Twitter)',
 	'linkedin' => 'LinkedIn',
+	'bluesky' => 'Bluesky',
 	'xing' => 'Xing',
 	'mail' => 'E-Mail',
 	'tumblr' => 'tumblr',
