@@ -7,6 +7,8 @@
         <li><a class="facebook fa fa-facebook-official" href="https://www.facebook.com/sharer/sharer.php?u=<?= $this->url ?>&amp;t=<?= $this->title ?>" rel="noopener noreferrer nofollow" data-escargot-ignore title="<?= $this->lang['share_on_facebook'] ?>" onclick="return shd.open(this.href,600,300);"></a></li>
       <?php elseif ($network == 'twitter'): ?>
         <li><a class="twitter fa fa-twitter" href="https://twitter.com/intent/tweet?url=<?= $this->url ?>&amp;text=<?= $this->title ?>" rel="noopener noreferrer nofollow" data-escargot-ignore title="<?= $this->lang['share_on_twitter'] ?>" onclick="return shd.open(this.href,500,260);"></a></li>
+      <?php elseif ($network == 'bluesky'): ?>
+        <li><a class="bluesky fa fa-bluesky" href="https://bsky.app/intent/compose?text=<?= $this->title ?> <?= $this->url ?>" rel="noopener noreferrer nofollow" data-escargot-ignore title="<?= $this->lang['share_on_twitter'] ?>" onclick="return shd.open(this.href,500,260);"></a></li>
       <?php elseif ($network == 'linkedin'): ?>
         <li><a class="linkedin fa fa-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?= $this->url ?>&amp;title=<?= $this->title ?>" rel="noopener noreferrer nofollow" data-escargot-ignore title="<?= $this->lang['share_on_linkedin'] ?>" onclick="return shd.open(this.href,520,570);"></a></li>
       <?php elseif ($network == 'xing'): ?>
