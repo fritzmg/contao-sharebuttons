@@ -17,6 +17,7 @@ $GLOBALS['TL_LANG']['sharebuttons']['no_theme'] = "Kein Theme (es wird kein Styl
 $GLOBALS['TL_LANG']['sharebuttons']['share_title'] = "Teilen:";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_facebook'] = "auf Facebook teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_twitter'] = "auf Twitter teilen";
+$GLOBALS['TL_LANG']['sharebuttons']['share_on_bluesky'] = "auf Bluesky teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_gplus'] = "auf Google+ teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_linkedin'] = "auf LinkedIn teilen";
 $GLOBALS['TL_LANG']['sharebuttons']['share_on_xing'] = "auf Xing teilen";
