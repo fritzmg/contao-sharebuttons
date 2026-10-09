@@ -27,7 +27,7 @@
     ],
     "require":{
         "php": ">=7.1",
-        "contao/core-bundle": "^4.4 || ^5.0",
+        "contao/core-bundle": "^4.4 || ^5.0 || ^6.0",
         "contao-community-alliance/composer-plugin": "^2.4 || ^3.0"
     },
     "replace": {
